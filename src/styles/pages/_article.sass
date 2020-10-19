@@ -1,0 +1,85 @@
+.article
+  min-width: 280px
+
+  &__header
+    margin-bottom: 1em
+
+    .excerpt__meta
+      margin-bottom: 1em
+
+  &__heading
+    padding-bottom: 0
+
+  &__subheading
+    color: grey
+    +fluid(font-size, 23, 25)
+    font-weight: 500
+    +fluid(line-height, 36, 44)
+    padding-top: 0
+
+  &__img
+    max-width: 100%
+    margin-bottom: 1em
+
+    > img
+      width: 100%
+      height: inherit
+      
+  > img
+    width: 100%
+
+  > ul, > ol
+    +fluid(line-height, 28, 37)
+    margin-left: 1em
+    padding:
+      bottom: 0.5em
+      top: 0.5em
+
+    a
+      border-bottom: 1px solid $black
+  
+  > p
+    
+    > a
+      border-bottom: 1px solid $black
+
+  &__published
+    color: $terce
+    display: inline-block
+    margin-bottom: 2em
+
+  &__share
+    margin-bottom: 2em
+
+    svg
+      fill: $black
+
+  &__footer
+    margin-top: 2em
+
+    .line
+      margin-bottom: 1em
+
+  > figure
+    width: 100%
+    padding:
+      bottom: 0.5em
+      top: 0.5em
+
+    > img
+      width: 100%
+      max-width: 100%
+      height: inherit
+
+figcaption
+  color: $terce
+  font-size: 0.8rem
+  padding:
+    bottom: 0.5em
+    top: 0.5em
+
+/* uncss:ignore start */
+.codepen, .cp_embed_wrapper
+  margin-top: 2em
+/* uncss:ignore end */
+

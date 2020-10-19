@@ -1,0 +1,39 @@
+.quote
+  padding:
+    bottom: 0.5em
+    top: 0.5em
+  
+  &-mark
+    // fill: $white
+    fill: $black
+    margin-bottom: 2em
+    width: 50px
+
+  &__person
+    background: $black
+    color: $white
+    display: inline block
+    padding: 0.25em 1em
+    text-transform: uppercase
+
+blockquote
+  background: lighten(#ecf0f1, 4%)
+  // color: $white
+  // border-left: 1em solid grey
+  font-weight: 500
+  +fluid(line-height, 28, 37)
+  padding: 1em 5%
+
+  > p
+    margin-bottom: 1em
+    
+  //   &:after
+  //     // background: $white
+  //     background: $black
+  //     // color: $black
+  //     color: $white
+  //     content: attr(data-author)
+  //     display: block
+  //     margin-top: 1.5em
+  //     text-align: right
+  //     padding: 0 1em

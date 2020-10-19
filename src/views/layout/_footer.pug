@@ -1,0 +1,35 @@
+footer.footer
+
+  .footer__wrapper.content.content--wide
+
+    a.footer__logo.flex--middle(href='/')
+      - var logo = 'footmark'
+      include ../graphics/_logo
+
+    //- a.footer__email.flex--middle(href='mailto:hello@josephpinder.com') hello@josephpinder.com
+    script#obfuscate
+
+    ul.footer__social.social.flex--middle.no-list-style
+      li.social__item
+        a.social__link.flex--middle(href='#', aria-label='Follow me on LinkedIn' rel='noopener', target='_blank')
+          +in-sq('footer__linkedin', follow)
+
+      li.social__item
+        a.social__link.flex--middle(href='#', aria-label='Follow me on Facebook' rel='noopener', target='_blank')
+          +fb-sq('footer__facebook', follow)
+      
+      li.social__item
+        a.social__link.flex--middle(href='#', aria-label='Follow me on Twitter' rel='noopener', target='_blank')
+          +tw('footer__twitter', follow)
+      
+      //- li.social__item
+      //-   a.social__link.flex--middle(href='#')
+  
+  b.line.content.content--wide
+
+  .footer__copy.content.content--wide.flex--between--middle
+
+    small &copy; 2020 [COMPANY NAME]. All rights reserved.
+
+    small
+      a(href='/privacy-policy') Privacy Policy

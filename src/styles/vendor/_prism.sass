@@ -1,0 +1,149 @@
+code
+  background: $tags
+  font-family: 'Lucida Console', Monaco, monospace, 'Andale Mono', 'Ubuntu Mono', monospace
+  padding: 0.1em 0.15em
+  border-radius: 0.2em
+
+pre
+  background: $black
+  border-radius: em(5)
+  margin: 0.5em 0
+  overflow: hidden
+  padding: 0 1em 2em
+  
+  
+  code
+    color: #ccc
+    display: block
+    font-size: 16px
+    overflow-x: scroll
+    position: relative
+    padding-top: 2em
+
+    &[class*="language-"]::after
+      color: #3498db
+      font:
+        family: 'Metropolis', sans-serif
+        size: em(14)
+        weight: 700
+      position: absolute
+      right: 1em
+      top: 1em
+      z-index: 3
+      
+
+    &.language-
+      
+      &html::after
+        content: 'HTML'
+
+      &css::after
+        content: 'CSS'
+
+      &js::after
+        content: 'JS'
+
+      &sass::after
+        content: 'SASS'
+
+      &php::after
+        content: 'PHP'
+
+      &json::after
+        content: 'JSON'
+      
+      &pug::after
+        content: 'PUG'
+
+code[class*="language-"]
+  color: #ccc
+  background: none
+  font-family: Monaco
+  font-size: 1em
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  word-wrap: normal
+  line-height: 1.5
+  -moz-tab-size: 4
+  -o-tab-size: 4
+  tab-size: 4
+  -webkit-hyphens: none
+  -moz-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+
+pre[class*="language-"]
+  color: #ccc
+  background: none
+  font-family: 'Lucida Console', Monaco, monospace, 'Andale Mono', 'Ubuntu Mono', monospace
+  font-size: 1em
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  word-wrap: normal
+  line-height: 1.5
+  -moz-tab-size: 4
+  -o-tab-size: 4
+  tab-size: 4
+  -webkit-hyphens: none
+  -moz-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+  padding: 0 1em 2em
+  margin: .5em 0
+  overflow: auto
+
+/* Code blocks
+
+\:not(pre) > code[class*="language-"], pre[class*="language-"]
+  background: #2d2d2d
+
+/* Inline code
+
+\:not(pre) > code[class*="language-"]
+  padding: .1em
+  border-radius: .3em
+  white-space: normal
+
+.token
+  &.comment, &.block-comment, &.prolog, &.doctype, &.cdata
+    color: #999
+
+  &.punctuation
+    color: #ccc
+
+  &.tag, &.attr-name, &.namespace, &.deleted
+    color: #e2777a
+
+  &.function-name
+    color: #6196cc
+
+  &.boolean, &.number, &.function
+    color: #f08d49
+
+  &.property, &.class-name, &.constant, &.symbol
+    color: #f8c555
+
+  &.selector, &.important, &.atrule, &.keyword, &.builtin
+    color: #cc99cd
+
+  &.string, &.char, &.attr-value, &.regex, &.variable
+    color: #7ec699
+
+  &.operator, &.entity, &.url
+    color: #67cdcc
+
+  &.important, &.bold
+    font-weight: bold
+
+  &.italic
+    font-style: italic
+
+  &.entity
+    cursor: help
+
+  &.inserted
+    color: green

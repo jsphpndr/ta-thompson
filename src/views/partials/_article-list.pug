@@ -1,0 +1,25 @@
+ul.excerpt__listing.no-list-style
+
+  - var i = 0;
+  
+  while i++ < count
+
+    li.excerpt__item
+
+      article.excerpt
+
+        a(href='/post')
+          h3 This is a blog post
+      
+        .excerpt__meta
+          small.excerpt__author
+            a(href='/about') Joseph Pinder
+
+          small.excerpt__date
+            time(datetime='2020-03-22') 22 Mar 2020
+
+          small.excerpt__read-time 3 min read
+
+        p.excerpt__summary Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident magnam a architecto commodi adipisci neque consequatur dolores laudantium modi. Possimus, alias. Blanditiis fugit enim hic [...] 
+        
+        a.btn.btn--primary.btn--ghost--sm(href='/post') Continue Reading

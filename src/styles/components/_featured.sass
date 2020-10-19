@@ -1,0 +1,132 @@
+.featured
+  // grid-template-areas: 'mocks project'
+  // grid-template-columns: repeat(2, 1fr)
+  // grid-template-rows: 1fr
+  // height: em(900)
+  grid-gap: 0
+
+  &__project
+    // grid-area: project
+    order: 2
+    padding:
+      bottom: 5em
+      top: 5em
+    margin:
+      left: em(20)
+      right: em(20)
+    +fluid((padding-left, padding-right), 0, 40)
+
+  
+  &__mocks
+    // grid-area: mocks
+    order: 1
+    height: inherit
+    position: relative
+
+    > img
+      display: block
+      height: 100%
+      object-fit: cover
+      position: absolute
+      width: 100%
+
+
+.project
+
+  &__title
+    order: 2
+
+  &__desc
+    order: 3
+
+  &__type
+    margin-bottom: 0.5em
+    order: 1
+    
+    > h3
+      display: inline
+      line-height: 1em
+      padding: 0 0.5em
+      position: relative
+
+      &::before, &::after
+        content: ''
+        height: 100%
+        width: em(5)
+        background: $primary-color
+        position: absolute
+        top: 0
+
+      &::before
+        left: 0
+
+      &::after
+        right: 0
+
+  &__attr__heading
+    order: 4
+  
+  &__attr__listing
+    order: 5
+    padding-left: 2em
+
+    > li
+      margin-bottom: 0.5em
+
+  &__view
+    order: 6
+
+    > .btn--ghost--lg
+      margin-left: 1em
+
+
+.recent
+  margin:
+    left: 1em
+    right: 1em 
+  +fluid((padding-left, padding-right), 0, 40)
+
+  &__listing
+    
+  &__title
+    order: 2
+
+  &__img
+    max-width: 100%
+    padding-top: 100%
+    position: relative
+    order: 1
+
+    > .img
+      display: block
+      left: 0
+      object-fit: cover
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: 1
+
+.content--wrap
+  margin:
+    left: 1em
+    right: 1em 
+  // padding:
+  //   bottom: 5em
+  //   top: 5em
+  +fluid((padding-bottom, padding-top), 36, 125)
+  +fluid((padding-left, padding-right), 0, 40)
+  
+
+.no-style
+  list-style: none
+
+.content--about
+  margin:
+    left: auto
+    right: auto
+  +fluid((padding-left, padding-right), 20, 60)
+  
+figcaption
+  +fluid(font-size, 16, 20)
+  font-style: italic
+  color: grey

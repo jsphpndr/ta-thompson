@@ -1,0 +1,27 @@
+
+- 
+  var menu = [
+    {page:'Blog', link:'/blog'},
+    {page:'About Me', link:'/about'}, 
+    {page:'Get In Touch', link:'/get-in-touch'}
+    ]
+
+input#click(type='checkbox', aria-checked='false', tabindex='0', aria-labelledby='menu-prompt')
+
+header.navbar
+
+  .navbar__wrapper.content.content--wide--padded.flex--wrap.flex--between--middle
+
+    a.navbar__logo.flex--middle(href='/')
+      - var logo = 'logo'
+      include ../graphics/_logo
+
+    label#navicon.navicon.flex--middle(for='click')
+      strong#menu-prompt Open the menu
+      span.bar
+
+    nav.navbar__menu
+      ul.menu
+        each item, i in menu
+          li.menu__item.current
+            a.menu__link(href= item.link)= item.page
