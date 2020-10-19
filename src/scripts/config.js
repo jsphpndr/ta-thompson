@@ -15,12 +15,6 @@ module.exports = [
     name: 'obfuscate',
     files: ['components/obscure']
   },
-  // {
-  //   name: 'inline',
-  //   files: [
-  //     'inline/lazyload'
-  //   ]
-  // },
   {
     name: 'thank-you',
 
