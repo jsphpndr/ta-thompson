@@ -1,11 +1,8 @@
 mixin img(src, alt)
 
-  - var ext = '.jpg'
-
   img.img.lazyload(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
-    data-src= subdomain + 'img/' + src + ext, data-sizes='auto',
-    alt=alt
-    )
+    data-src= staging + '/img/' + src + '.jpg', data-sizes='auto',
+    alt=alt)
 
   block
 
@@ -17,7 +14,7 @@ mixin method(load)
 mixin script(filename, deps, async, defer)
 
   if pro
-    script(src!=`${subdomain}/scripts/${filename}-<?php echo $version; ?>.min.js` async=async defer=defer)
+    script(src!=`/scripts/${filename}-<?php echo $version; ?>.min.js` async=async defer=defer)
 
   else if deps
     script(src=`/scripts/${filename}.deps.js` async=async defer=defer)
