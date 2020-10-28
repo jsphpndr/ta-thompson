@@ -165,7 +165,7 @@ $ratio: (1 + sqrt(5)) / 2
     @media (min-width: 600px)
       @content
   @else if $size == tablet-or-less
-    @media (max-width: 1024px), (max-width: 1366px) and (hover: none)
+    @media (max-width: 1024px), (max-width: 1365px) and (hover: none)
       @content
   @else if $size == desktop-up
     @media (min-width: 1025px), (min-width: 1366px) and (hover: hover)
@@ -173,3 +173,11 @@ $ratio: (1 + sqrt(5)) / 2
   @else if $size == big-desktop-up
     @media (min-width: 1800px)
       @content
+
+
+
+=ignore
+  /* uncss:ignore start */
+  @content
+  /* uncss:ignore end */
+  

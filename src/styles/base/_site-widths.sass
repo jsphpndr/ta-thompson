@@ -11,21 +11,27 @@ $spacing: 1rem !default
       right: unquote('max(#{$spacing}, env(safe-area-inset-right))')
   
   &--wide
-    max-width: $wide
+    max-width: $desktop
 
-    @media (min-width: ($wide + 41)) /* Test */
+    @media(min-width: 1367px)
+      max-width: $desktop--wide
+
+    @media (min-width: ($desktop + 41)) /* Test */
       margin:
         right: auto
         left: auto
           
     &--padded
-      max-width: ($wide + 40)
+      max-width: ($desktop + 40)
       margin:
         right: auto
         left: auto
       padding:
         right: $spacing
         left: $spacing
+        
+      @media(min-width: 1367px)
+        max-width: ($desktop--wide + 40)
 
       @supports ( padding: unquote( 'max(0px)' ) )
         padding:

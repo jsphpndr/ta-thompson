@@ -1,27 +1,28 @@
 
 - 
-  var menu = [
-    {page:'Our School', link:'/our-school/'},
-    {page:'News', link:'/news/'}, 
-    {page:'Contact Us', link:'/contact-us'}
+  let menu = [
+    {page:'Our School', link:'/our-school/', current: school},
+    {page:'News', link:'/news/', current: news}, 
+    {page:'Contact Us', link:'/contact-us', current: contact}
     ]
+    
+input#click(type='checkbox', tabindex='0', aria-labelledby='prompt')
 
-input#click(type='checkbox', aria-checked='false', tabindex='0', aria-labelledby='menu-prompt')
-
-header.navbar
-
-  .navbar__wrapper.content.content--wide--padded.flex--wrap.flex--between--middle
-
+header#navbar(class=(home ? 'navbar navbar--home' : false ))
+  .navbar__wrapper.content.content--wide--padded.flex--between--middle
     a.navbar__logo.flex--middle(href='/')
-      - var logo = 'logo'
       include ../graphics/_logo
 
-    label#navicon.navicon.flex--middle(for='click')
-      strong#menu-prompt Open the menu
-      span.bar
-
+    label#navicon.navicon(for='click')
+      small#prompt Menu
+      svg.burger(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 20 20')
+        path.bar__tp(d='M18.5 3h-17C.7 3 0 2.3 0 1.5S.7 0 1.5 0h17c.8 0 1.5.7 1.5 1.5S19.3 3 18.5 3z')
+        path.bar__md(d='M10.5 11.5h-9C.7 11.5 0 10.8 0 10s.7-1.5 1.5-1.5h9c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z')
+        path.bar__md(d='M18.5 20h-17C.7 20 0 19.3 0 18.5S.7 17 1.5 17h17c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z')
+        path.bar__bt(d='M18.5 11.5h-3c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h3c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z')
+          
     nav.navbar__menu
       ul.menu
         each item, i in menu
-          li.menu__item.current
+          li.menu__item(class=(menu ? item.current : false ))
             a.menu__link(href= item.link)= item.page

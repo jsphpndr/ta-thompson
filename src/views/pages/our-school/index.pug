@@ -1,9 +1,41 @@
 extends ../../layout/_layout
 
 block var
-  - var title = 'Our School | T.A. Thompson Junior High School'
-  - var description = 'This is a template'
-  - var pageUrl = ''
+  - let title = 'Our School | T.A. Thompson Junior High School'
+  - let description = 'This is a template'
+  - let pageUrl = ''
+  - let school = 'current'
+
+  - 
+    let sidebar = [
+      {page:'Our School', link:'/our-school', current: school},
+      {page:'Faculty & Staff', link:'faculty-staff', current: faculty},
+      {page:'T.A. Thompson', link:'/our-school/ta-thompson', current: ta},
+      //- {page:'', link:'', current:}
+    ]
 
 
 block content
+
+  .content.content--wide.grid
+
+    aside.sidebar
+
+      nav.sidebar__nav
+        
+        ul.sidebar__menu
+
+          each item, i in sidebar
+            li.sidebar__item(class=(sidebar ? item.current : false ))
+              a.sidebar__link(href=item.link)=item.page
+
+
+    article
+
+      h1 Our School
+
+      - let p = 0;
+
+      while p++ < 4
+
+        p=lorem

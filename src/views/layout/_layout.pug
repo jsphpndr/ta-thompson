@@ -34,11 +34,11 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     //- https://www.filamentgroup.com/lab/critical-cdn.html
     // CSS — START
     if pro    
-      link(rel='preload' href='styles/style-version.min.css' as='style')
-      link(type='text/css' rel='stylesheet' href='styles/style-version.min.css')
+      link(rel='preload' href='/styles/style-version.min.css' as='style')
+      link(type='text/css' rel='stylesheet' href='/styles/style-version.min.css')
 
     else
-      link(rel='preload' href='styles/style.css' as='style')
+      link(rel='preload' href='/styles/style.css' as='style')
       link(rel='stylesheet', href='/styles/style.css', )
     // CSS — END
     
@@ -61,12 +61,12 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     meta(name="theme-color", content="#ffffff")
     // Site Favicons - END
       
-  body
+  body(class=(body ? body : false ))
     
     //-  Include Site Header
     include _header
     
-    main#main.main
+    main#main.main(class=(main ? main : false ))
       block content
     
     //- Include Site Footer

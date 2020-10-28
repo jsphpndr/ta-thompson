@@ -8,22 +8,28 @@
   z-index: -999
 
 .navbar
-  min-height: $header-height
+  +fluid(min-height, 100, 150)
   width: 100%
 
 
   &__wrapper
-    min-height: $header-height
+    +fluid(min-height, 100, 150)
     z-index: 0
 
 
   &__logo
-    height: $header-height
-    +fluid(width, 200, 300)
+    +fluid(height, 100, 150)
+    +fluid(width, 200, 350)
+    fill: $prime
 
     > svg
       width: inherit
-      fill: $prime
+      
+
+  &--home
+
+    .navbar__logo
+      fill: $second
 
   &__menu
 
@@ -79,17 +85,14 @@
         opacity: 1
 
       &.current::before
-        opacity: 1
-        
-      
+        opacity: 1   
 
   &__link
     color: $black
-    text-transform: uppercase
+    // text-transform: uppercase
 
     +device(tablet-or-less)
       color: $white
-      // text-align: center
 
 .navicon
   align-items: center

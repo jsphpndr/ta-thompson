@@ -4,29 +4,41 @@ block var
   - var title = 'Contact Us | T.A. Thompson Junior High School'
   - var description = 'This is a template'
   - var pageUrl = ''
+  - let contact = 'current'
+  - let main = 'flex--col flex--middle'
 
 
 block content
 
-  div
-
-    .school-details
-      h1 Contact Us
-
-      address
-        span Gregory Street
-        br
-        span P.O. Box N-3913
-        br
-        span Nassau, NP
-
-
-      script(data-local='info',data-domain='@tathompson.edu.bs' , obfuscate)
-      script(data-country='1', data-area='242', data-prefix='325', data-line='1506' obfuscate)
-      script(data-country='1', data-area='242', data-prefix='325', data-line='1507' obfuscate)
+  .contact.content.content--wide
     
-    include ../components/_form__simple
+    h1 Contact Us
+
+    .contact__content.grid
+
+      .school-details
+
+        address
+          span Gregory Street
+          br
+          span P.O. Box N-3913
+          br
+          span Nassau, NP
+
+
+        script(data-local='info',data-domain='tathompson.edu.bs' , obfuscate)
+        script(data-country='1', data-area='242', data-prefix='325', data-line='1506' obfuscate)
+        script(data-country='1', data-area='242', data-prefix='325', data-line='1507' obfuscate)
+
+        ul.social.flex.no-list-style
+          li.social__icon
+            +fb-sq('sidebar__facebook', '#', false)
+          
+          li.social__icon
+            +tw('sidebar__twitter', '#', false)
+
+      include ../components/_form__simple
 
     
 
-  #map.map
+  #map.map.oversized
