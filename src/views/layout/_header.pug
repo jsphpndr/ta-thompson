@@ -23,6 +23,8 @@ header#navbar(class=(home ? 'navbar navbar--home' : false ))
           
     nav.navbar__menu
       ul.menu
+        li.menu__item Academics
+        li.menu__item Student Life
         each item, i in menu
           li.menu__item(class=(menu ? item.current : false ))
             a.menu__link(href= item.link)= item.page

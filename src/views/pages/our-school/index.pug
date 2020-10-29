@@ -5,30 +5,14 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let school = 'current'
-
-  - 
-    let sidebar = [
-      {page:'Our School', link:'/our-school', current: school},
-      {page:'Faculty & Staff', link:'faculty-staff', current: faculty},
-      {page:'T.A. Thompson', link:'/our-school/ta-thompson', current: ta},
-      //- {page:'', link:'', current:}
-    ]
-
+  
 
 block content
 
+  .banner.oversized
+
+
   .content.content--wide.grid
-
-    aside.sidebar
-
-      nav.sidebar__nav
-        
-        ul.sidebar__menu
-
-          each item, i in sidebar
-            li.sidebar__item(class=(sidebar ? item.current : false ))
-              a.sidebar__link(href=item.link)=item.page
-
 
     article
 
@@ -39,3 +23,11 @@ block content
       while p++ < 4
 
         p=lorem
+
+    
+    
+    
+    include ../../partials/_sidebar
+
+
+    

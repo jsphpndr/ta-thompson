@@ -1,49 +1,17 @@
-aside.content__sidebar.sidebar.content--narrow
+- 
+  var sidebar = [
+    {page:'Our School', link:'/our-school', current: school},
+    {page:'T.A. Thompson', link:'/our-school/thomas-alvin-thompson', current: ta},
+    {page:'Faculty & Staff', link:'faculty-staff', current: faculty}
+    //- {page:'', link:'', current:}
+  ]
   
-  section
+aside.sidebar
 
-    h3 Categories
+  nav.sidebar__nav
 
-    ul.sidebar__category.category.no-list-style
-      li.category__item 
-        a.category__link(href='#') Web Design
-      li.category__item 
-        a.category__link(href='#') Web Development
-      li.category__item 
-        a.category__link(href='#') SEO
+    ul.sidebar__menu
 
-  section
-
-    h3 Tags
-
-    ul.sidebar__tag.tag.flex--wrap.no-list-style
-      li.tag__item
-        a.tag__link(href='#') #seo
-      li.tag__item
-        a.tag__link(href='#') #responsive
-      li.tag__item
-        a.tag__link(href='#') #seo
-      li.tag__item
-        a.tag__link(href='#') #responsive
-      li.tag__item
-        a.tag__link(href='#') #seo
-      li.tag__item
-        a.tag__link(href='#') #responsive
-
-  section.sidebar__share
-
-    h4 Share this article:
-
-    ul.social.flex.no-list-style
-      li.social__item
-        a.social__link.flex--middle(href='#', aria-label='Share on LinkedIn' rel='noopener', target='_blank')
-          +in-sq('sidebar__linkedin', share)
-
-      li.social__item
-        a.social__link.flex--middle(href='#', aria-label='Share on Facebook' rel='noopener', target='_blank')
-          +fb-sq('sidebar__facebook', share)
-      
-      li.social__item
-        a.social__link.flex--middle(href='#' aria-label='Share on Twitter' rel='noopener', target='_blank')
-          +tw('sidebar__twitter', share)
-
+      each item, i in sidebar
+        li.sidebar__item(class=(sidebar ? item.current : false ))
+          a.sidebar__link(href=item.link)=item.page
