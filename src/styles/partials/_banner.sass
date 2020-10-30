@@ -1,6 +1,10 @@
 .banner
-  +fluid(min-height, 320, 800)
+  +fluid(min-height, 320, 500)
   // background-color: #3979b5
+  min-height: calc(100vh - #{$header-height})
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
 
   &__wrapper
     min-height: inherit

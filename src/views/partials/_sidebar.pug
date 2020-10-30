@@ -1,17 +1,19 @@
-- 
-  var sidebar = [
+mixin sidebar(data)
+
+  aside.sidebar
+
+    nav.sidebar__nav
+
+      ul.sidebar__menu
+
+        each item, i in data
+          li.sidebar__item(class=(data ? item.current : false ))
+            a.sidebar__link(href=item.link)=item.page
+
+-
+  let schoolSubpages = [
     {page:'Our School', link:'/our-school', current: school},
     {page:'T.A. Thompson', link:'/our-school/thomas-alvin-thompson', current: ta},
     {page:'Faculty & Staff', link:'faculty-staff', current: faculty}
     //- {page:'', link:'', current:}
   ]
-  
-aside.sidebar
-
-  nav.sidebar__nav
-
-    ul.sidebar__menu
-
-      each item, i in sidebar
-        li.sidebar__item(class=(sidebar ? item.current : false ))
-          a.sidebar__link(href=item.link)=item.page

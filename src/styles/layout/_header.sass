@@ -8,28 +8,21 @@
   z-index: -999
 
 .navbar
-  +fluid(min-height, 100, 150)
-  width: 100%
-
+  background-color: $prime
+  height: $header-height
 
   &__wrapper
-    +fluid(min-height, 100, 150)
+    height: $header-height
     z-index: 0
 
 
   &__logo
-    +fluid(height, 100, 150)
-    +fluid(width, 200, 350)
-    fill: $prime
+    height: $header-height
+    +fluid(width, 200, 250)
+    fill: $second
 
     > svg
       width: inherit
-      
-
-  &--home
-
-    .navbar__logo
-      fill: $second
 
   &__menu
 
@@ -53,6 +46,7 @@
     
 
   &__item
+    color: $second
     margin-left: $spacing
 
     +device(tablet-or-less)
@@ -74,7 +68,7 @@
         content: ''
         left: 0
         height: 2px
-        background: $black
+        background: $second
         opacity: 0
         position: absolute
         transition: opacity 0.3s ease-in-out
@@ -88,7 +82,7 @@
         opacity: 1   
 
   &__link
-    color: $black
+    color: $second
     // text-transform: uppercase
 
     +device(tablet-or-less)

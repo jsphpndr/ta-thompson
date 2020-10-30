@@ -1,0 +1,199 @@
+mixin dept(dept, position, data)
+
+  li
+    table.department
+      thead
+        tr
+          th(colspan='2')=dept
+
+      tbody
+        each item, i in data
+          tr.flex--col
+            td
+              span=item.last
+              | , 
+              span=item.first
+            td=position
+
+    a(href='/academics/departments/department/') Visit this department
+
+//- 
+//- Agricultural Science
+//- Agriculture
+//- Art & Design
+//- Clerical
+//- Computer Studies
+//- Counselling
+//- FACS
+//- HFLE
+//- Language
+//- Language Arts
+//- Library Science
+//- Mathematics
+//- Modern Languages
+//- Modern Languages
+//- Performing Arts
+//- Physical Education
+//- Pre-Vocational
+//- Principal
+//- Religious Studies
+//- Resource
+//- Science
+//- Social Studies
+//- Technical Studies
+//- Technical Studies
+
+
+  Senior Master
+  Senior Mistress
+  Senior Mistress
+  Senior Mistress
+  Vice-Principal - Administration
+  Vice-Principal - Curriculum
+
+
+//- Agricultural Science
+-
+  let agriculturalScience= [
+    {last:'Edwards', first:'Arthur'},
+  ]
+//- Agriculture
+-
+  let agriculture = [
+    {last:'Anoop', first:'Thakoordeo'},
+  ]
+//- Art & Design
+-
+  let artDesign = [
+    {last:'Brennen', first:'Rory'},
+    {last:'Strachan', first:'Charlthorn'},
+  ]
+//- Clerical
+-
+  let clerical = [
+    {last:'Dean', first:'Ayla'},
+    {last:'Thurston', first:'Monica'},
+  ]
+//- Computer Studies
+-
+  let computerStudies = [
+    {last:'Duvalier-Evans', first:'Linda'},
+    {last:'Edgecombe-Wilson', first:'Desiree'},
+    {last:'Pratt', first:'Earthlyn'},
+  ]
+
+//- Counselling
+-
+  let counselling = [
+    {last:'Cole-Cash', first:'Wynsome'},
+    {last:'Hamilton', first:'Jenneil'},
+    {last:'Rolle', first:'Chryslee'},
+    {last:'Watkins', first:'Jensel'},
+  ]
+//- FACS
+-
+  let facs = [
+    {last:'Ingraham', first:'William'},
+    {last:'Malcolm', first:'Bianca'},
+    {last:'McSweeney', first:'Patricia'},
+  ]
+//- HFLE
+-
+  let hfle = [
+    {last:'Montpetit', first:'Jon'},
+    {last:'Moss', first:'Theo'},
+  ]
+//- Language
+-
+  let language= [
+    {last:'Evans', first:'Dian'},
+    {last:'Watson', first:'Travayne'},
+  ]
+//- Language Arts
+-
+  let languageArts= [
+    {last:'Jarrett', first:'Matilda'},
+    {last:'Rolle-Moss', first:'Moika'},
+    {last:'Rolle', first:'Claudine'},
+    {last:'Smith', first:'Lynette'},
+  ]
+//- Library Science
+-
+  let libraryScience = [
+    {last:'Phillips', first:'Aramina'},
+  ]
+//- Mathematics
+-
+  let math = [
+    {last:'Bain', first:'Claudia'},
+    {last:'Bain', first:'Ianne'},
+    {last:'Bipat', first:'Bishwanand'},
+    {last:'Hepburn', first:'Patrice'},
+    {last:'Smith', first:'Itsa'},
+  ]
+//- Modern Languages
+-
+  let modernLanguages = [
+    {last:'Herrera', first:'Cecilia'},
+    {last:'Munroe', first:'Dianna'},
+    {last:'Suarez', first:'Mayrel'},
+  ]
+
+//- Performing Arts
+-
+  let performingArts = [
+    {last:'Duncombe', first:'Jeremiah'},
+    {last:'McKenzie', first:'Shadaria'},
+    {last:'Springer', first:'Gillian'},
+  ]
+//- Physical Education
+-
+  let pe = [
+    {last:'Campbell', first:'Giovanni'},
+    {last:'Campbell', first:'Kendal'},
+    {last:'Scavella', first:'Donnavette'},
+  ]
+//- Pre-Vocational
+-
+  let prevoc = [
+    {last:'Johnson', first:'Andrea'},
+    {last:'Laing', first:'Daslin'},
+  ]
+
+//- Religious Studies
+-
+  let religion = [
+    {last:'Clarke-Johnson', first:'Linda'},
+    {last:'Major-Rolle', first:'Raquelle'},
+    {last:'Sweeting', first:'Antonya'},
+    {last:'Toussaint', first:'Sammeka'},
+  ]
+//- Resource
+-
+  let resource = [
+    {last:'Burrows', first:'Jennifer'},
+  ]
+//- Science
+-
+  let science = [
+    {last:'Cooper-Johnson', first:'Vernencia'},
+    {last:'Deleveaux', first:'Ainsley'},
+    {last:'Heastie', first:'Danya'},
+    {last:'Ingraham', first:'Cheryl'},
+    {last:'Petit', first:'Sandra'},
+  ]
+//- Social Studies
+-
+  let socialStudies = [
+    {last:'Brown', first:'Joan'},
+    {last:'Cartwright', first:'Kamera'},
+    {last:'Neilly', first:'Kendeshia'},
+    {last:'Russell', first:'Thais'},
+
+  ]
+//- Technical Studies
+-
+  let technicalStudies = [
+    {last:'James', first:'Zacaria'},
+    {last:'Sands', first:'Termeka'},
+  ]

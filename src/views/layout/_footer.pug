@@ -1,13 +1,84 @@
 footer.footer
 
-  .footer__wrapper.content.content--wide
+  .footer__wrapper.content.content--wide.grid.grid--2cols--medium.grid--3cols--large
+    .col
+      h3 Academics
 
-    a.footer__logo.flex--middle(href='/')
-      - var logo = 'footmark'
-      include ../graphics/_logo
+      - 
+        let footerAcademics = [
+          {page:'Departments', link: '/academics/departments'},
+          {page:'Pre-Vocational', link: '/academics/pre-vocational'},
+          {page:'Counselling', link:'/academics/counselling'},
+          //- {page:'', link: ''},
+        ]
+      nav
+        ul
+          each item, i in footerAcademics
+            li
+              a(href=item.link)=item.page
 
-    //- a.footer__email.flex--middle(href='mailto:hello@josephpinder.com') hello@josephpinder.com
-    script#obfuscate
+      - 
+        let footerLife = [
+          {page:'Athletics', link: '/student-life/atheltics'},
+          {page:'Clubs', link: '/student-life/clubs'},
+          //- {page:'', link: ''},
+        ]
+      
+      h3 Student Life
+      nav
+        ul
+          each item, i in footerLife
+            li
+              a(href=item.link)=item.page
+    .col
+      h3 Our School
+
+      - 
+        let footerSchool = [
+          {page:'About The School', link: '/our-school/'},
+          {page:'T.A. Thompson', link: '/our-school/thomas-alvin-thompson'},
+          {page:'Faculty & Staff', link:'/our-school/faculty-staff'},
+          //- {page:'', link: ''},
+        ]
+      nav
+        ul
+          each item, i in footerSchool
+            li
+              a(href=item.link)=item.page
+
+
+      h3
+        a(href='/news/') News
+      //- - 
+      //-   let life = [
+      //-     {page:'Athletics', link: '/student-life/atheltics'},
+      //-     {page:'Clubs', link: '/student-life/clubs'},
+      //-     //- {page:'', link: ''},
+      //-   ]
+      
+      //- h3 Student Life
+      //- nav
+      //-   ul
+      //-     each item, i in life
+      //-       li
+      //-         a(href=item.link)=item.page
+    .col
+      h3 Contact Us
+
+      address
+        span Gregory Street
+        br
+        span P.O. Box N-3913
+        br
+        span Nassau, NP
+    
+    
+      +tel('242','325','1506')
+      +tel('242','325','1507')
+
+      +email('info', 'tathompson.edu.bs')
+
+
 
     ul.footer__social.social.flex--middle.no-list-style
       li.social__item

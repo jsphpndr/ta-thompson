@@ -1,13 +1,72 @@
 extends ../../layout/_layout
 
 block var
-  - var title = 'Faculty & Staff | T.A. Thompson Junior High School'
-  - var description = 'This is a template'
-  - var pageUrl = ''
+  - let title = 'Faculty & Staff | T.A. Thompson Junior High School'
+  - let description = 'This is a template'
+  - let pageUrl = ''
   - let faculty = 'current'
 
 
 block content
 
+  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
 
-  include ../../partials/_sidebar
+  //- https://gist.github.com/zthxxx/9ddc171d00df98cbf8b4b0d8469ce90a
+  .block.content.content--wide.grid
+    
+    article
+
+      h1 Faculty &amp; Staff
+
+      ul.profiles.no-list-style.grid
+
+        li.profile
+
+      ul.grid.grid--2cols--medium.grid--3cols--large.no-list-style
+        include ../../components/_department
+        //- 
+        +dept('Agricultural Science', 'Trained Teacher', agriculturalScience)
+        //- Agriculture
+        +dept('Agriculture', 'Trained Teacher', agriculture)
+        //- Art & Design
+        +dept('Art & Design', 'Trained Teacher', artDesign)
+        //- Clerical
+        +dept('Clerical', 'Secretary', clerical)
+        //- Computer Studies
+        +dept('Computer Studies', 'Trained Teacher', computerStudies)
+        //- Counselling
+        +dept('Counselling', 'Trained Counseler', counselling)
+        //- FACS
+        +dept('FACS', 'Trained Teacher', facs)
+        //- HFLE
+        +dept('HFLE', 'Trained Teacher', hfle)
+        //- Language
+        +dept('Language', 'Trained Teacher', language)
+        //- Language Arts
+        +dept('Language Arts', 'Trained Teacher', languageArts)
+        //- Library Science
+        +dept('Library Science', 'Trained Teacher', libraryScience)
+        //- Mathematics
+        +dept('Mathematics', 'Trained Teacher', math)
+        //- Modern Languages
+        +dept('Modern Languages', 'Trained Teacher', modernLanguages)
+        //- Performing Arts
+        +dept('Performing Arts', 'Trained Teacher', performingArts)
+        //- Physical Education
+        +dept('Physical Education', 'Trained Teacher', pe)
+        //- Pre-Vocational
+        +dept('Pre-Vocational', 'Trained Teacher', prevoc)
+        //- Religious Studies
+        +dept('Religious Studies', 'Trained Teacher', religion)
+        //- Resource
+        +dept('Resource', 'Trained Teacher', resource)
+        //- Science
+        +dept('Science', 'Trained Teacher', science)
+        //- Social Studies
+        +dept('Social Studies', 'Trained Teacher',socialStudies)
+        //- Technical Studies
+        +dept('Technical Studies', 'Trained Teacher', technicalStudies)
+     
+    
+    include ../../partials/_sidebar
+    +sidebar(schoolSubpages)

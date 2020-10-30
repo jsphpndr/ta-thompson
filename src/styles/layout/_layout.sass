@@ -1,3 +1,36 @@
 .main
   min-height: 100vh
-  +fluid(margin-top, 0, 40)
+  padding-bottom: 5rem
+
+.block
+  grid-template-columns: em(250) 1fr
+  grid-template-areas: 'sidebar article'
+  padding-top: 5rem
+  grid-gap: 2rem
+
+  article
+    grid-area: article
+
+  h1
+    color: $prime
+    line-height: 1
+    position: relative
+
+    &::before
+      content: ''
+      background-color: $second
+      height: em(1)
+      width: 100%
+      position: absolute
+      bottom: em(6)
+      left: 0
+
+
+.sidebar
+  color: $second
+  background-color: $prime
+  grid-area: sidebar
+  padding: 1rem
+
+  a
+    color: $second

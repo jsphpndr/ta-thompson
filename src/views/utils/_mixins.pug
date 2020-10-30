@@ -8,8 +8,11 @@ mixin img(src, alt)
 
   //- 320, 375, 414, 568, 667, 736, 768, 834, 1024, 1112, 1366
 
-mixin method(load)
- - var = load
+mixin tel(dataArea, dataPrefix, dataLine)
+  script(data-country='1', data-area=dataArea, data-prefix=dataPrefix, data-line=dataLine, obfuscate)
+
+mixin email(dataLocal, dataDomain)
+  script(data-local=dataLocal, data-domain=dataDomain, obfuscate)
 
 mixin script(filename, deps, async, defer)
 

@@ -5,14 +5,12 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let school = 'current'
-  
 
 block content
 
-  .banner.oversized
+  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
 
-
-  .content.content--wide.grid
+  .block.content.content--wide.grid
 
     article
 
@@ -24,10 +22,8 @@ block content
 
         p=lorem
 
-    
-    
-    
     include ../../partials/_sidebar
+    +sidebar(schoolSubpages)
 
 
     
