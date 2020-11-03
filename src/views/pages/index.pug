@@ -14,3 +14,69 @@ block content
 
 
   include ../partials/_banner
+  //- Short summary of School | upcoming events
+  section.summary.content.content--wide
+
+    div
+
+      h2 An Excellent School, Producing Excellent Students
+
+      p= lorem
+      p= lorem
+
+  //- Prevocs
+  section.prevocs
+
+    .content.content--wide
+
+      div
+
+        h2 Pre-Vocational Studies
+
+        p= lorem
+        p= lorem
+
+      figure
+
+
+  //- News
+
+  section.news.content.content--wide.flex--col
+
+    h2.news__heading Latest News
+
+
+    article.featured.grid
+
+      div.featured__content
+
+        h2.featured__heading An Awesome School Year
+
+        p.featured__paragraph= lorem
+
+        a(href='/news/post') Read This Article
+
+        p.featured__category Featured
+
+        time.featured__time Oct 31, 2020
+
+      figure.featured__img
+        +img('laughing-students', 'Students laughing')
+
+    ul.news__excerpts.no-list-style.grid.grid--2cols--medium.grid--3cols--large
+
+      - let i = 0;
+
+      while i++ < 3
+
+        li.news__excerpt
+          
+          a(href='/news/post')
+            article.excerpt.flex--col
+
+              h2.excerpt__heading T.A. Thompson Launches Website
+              time.excerpt__date Oct 31, 2020
+
+              figure.excerpt__img
+                +img('laughing-students', 'Students laughing')
+

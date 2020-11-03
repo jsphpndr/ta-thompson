@@ -8,3 +8,46 @@ block var
 
 
 block content
+
+  .news.content.content--wide.flex--col
+
+    h1.hidden__heading News
+
+    h2.news__heading Latest News
+
+    //- p Keep up with the latest happenings at T.A. Thompson. We have a busy school year and an active student body. Go, Scorpions!
+
+    article.featured.grid
+
+      div.featured__content
+
+        h2.featured__heading An Awesome School Year
+
+        p.featured__paragraph= lorem
+
+        a(href='/news/post') Read This Article
+
+        p.featured__category Featured
+
+        time.featured__time Oct 31, 2020
+
+      figure.featured__img
+        +img('laughing-students', 'Students laughing')
+
+    ul.news__excerpts.no-list-style.grid.grid--2cols--medium.grid--3cols--large
+
+      - let i = 0;
+
+      while i++ < 9
+
+        li.news__excerpt
+          
+          a(href='/news/post')
+            article.excerpt.flex--col
+
+              h2.excerpt__heading T.A. Thompson Launches Website
+              time.excerpt__date Oct 31, 2020
+
+              figure.excerpt__img
+                +img('laughing-students', 'Students laughing')
+

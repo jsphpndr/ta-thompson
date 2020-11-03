@@ -1,0 +1,24 @@
+extends ../../layout/_layout
+
+block var
+  - let title = 'School Events | T.A. Thompson Junior High School'
+  - let description = 'This is a template'
+  - let pageUrl = ''
+  - let events = 'current'
+
+block content
+
+  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
+
+  .block.content.content--wide.grid
+
+    article
+
+      h1 School Events
+
+
+    include ../../partials/_sidebar
+    +sidebar(schoolSubpages)
+
+
+    

@@ -34,3 +34,44 @@
 
   a
     color: $second
+
+.hidden
+
+  &__heading
+    font-size: 1px
+    height: 0
+    width: 0
+    visibility: 
+    position: absolute
+    top: 0
+    left: -999rem
+    z-index: -999
+
+.news
+
+  &__heading
+    order: 2
+
+  &__excerpts
+    order: 3
+
+.featured
+  order: 1
+
+
+
+// Subpages
+
+.banner
+
+  &--subpage
+
+    &::before
+      content: attr(data-subpage)
+      +fluid(font-size, 47, 52)
+      font-weight: 700
+      
+
+
+
+    
