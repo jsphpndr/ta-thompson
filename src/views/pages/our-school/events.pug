@@ -5,11 +5,12 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let events = 'current'
+  - let page = 'Our School'
 
 block content
 
-  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
-
+  include ../../partials/_banner
+  
   .block.content.content--wide.grid
 
     article

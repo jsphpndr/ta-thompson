@@ -5,20 +5,11 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let ta = 'current'
-
-  //- - 
-  //-   let schoolSubpages = [
-  //-     {page:'Our School', link:'/our-school', current: school},
-  //-     {page:'T.A. Thompson', link:'/our-school/thomas-alvin-thompson', current: ta},
-  //-     {page:'Faculty & Staff', link:'faculty-staff', current: faculty}
-  //-     //- {page:'', link:'', current:}
-  //-   ]
+  - let page = 'Our School'
 
 block content
 
-  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
-
-    .banner.banner--subpage.content.content--wide.flex--middle(data-subpage='Our School')
+  include ../../partials/_banner
   
   .block.content.content--wide.grid
 

@@ -5,11 +5,11 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let faculty = 'current'
-
+  - let page = 'Our School'
 
 block content
 
-  .banner(data-bg=`${staging}/img/laughing-students.jpg`)
+  include ../../partials/_banner
   //- Auto Deploy Hugo
   //- https://flaviocopes.com/netlify-auto-deploy/
   //- Hugo Activity Calender
@@ -21,9 +21,7 @@ block content
 
       h1 Faculty &amp; Staff
 
-      ul.profiles.no-list-style.grid
-
-        li.profile
+      include ../../components/_profile
 
       ul.grid.grid--2cols--medium.grid--3cols--large.no-list-style
         include ../../components/_department

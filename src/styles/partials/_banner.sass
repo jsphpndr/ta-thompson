@@ -1,17 +1,25 @@
 .banner
   +fluid(min-height, 320, 500)
-  // background-color: #3979b5
+  background-color: $prime
   min-height: calc(100vh - #{$header-height})
   background-repeat: no-repeat
   background-position: center
   background-size: cover
 
+  &--home
+    height: 100vh
+
   &__wrapper
     min-height: inherit
     align-items: center
 
+    &::after
+      content: attr(data-subpage)
+      +fluid(font-size, 47, 52)
+      font-weight: 700
+
   &__content
-    background-color: $prime
+    // background-color: $prime
     padding: 3rem 2rem
 
   &__subheading

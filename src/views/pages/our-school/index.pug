@@ -5,14 +5,12 @@ block var
   - let description = 'This is a template'
   - let pageUrl = ''
   - let school = 'current'
+  - let subpage = 'Our School'
+  - let page = subpage
 
 block content
 
-  header.banner(data-bg=`${staging}/img/laughing-students.jpg`)
-    
-    .content.content--wide
-
-      h1 Our School
+  include ../../partials/_banner
 
   .block.content.content--wide.grid
 

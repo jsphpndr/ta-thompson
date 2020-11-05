@@ -47,7 +47,9 @@
 
   &__item
     color: $second
+    min-height: inherit
     margin-left: $spacing
+    position: relative
 
     +device(tablet-or-less)
       padding:
@@ -81,6 +83,11 @@
       &.current::before
         opacity: 1   
 
+      &:hover
+
+        .submenu
+          max-height: em(200)
+        
   &__link
     color: $second
     // text-transform: uppercase
@@ -135,7 +142,27 @@
     width: inherit
   
 // https://codepen.io/Raduga61/pen/qoXxqg
-  
+
+.menu
+  height: inherit
+
+.submenu
+  max-height: 0
+  min-width: 200%
+  overflow: hidden
+  position: absolute
+  top: 100%
+  left: 0
+  background: $second
+
+  &__link
+    display: inherit
+    padding: 0.5em 1em
+
+    &:hover
+      color: $second
+      background: $prime
+
 #click:checked + .navbar
 
   .menu

@@ -5,7 +5,20 @@
     {page:'News', link:'/news/', current: news}, 
     {page:'Contact Us', link:'/contact-us', current: contact}
     ]
-    
+
+- 
+  let a = [
+    {page:'Departments', link:'/academics/departments/'},
+    {page:'Pre-Vocational', link:'/academics/pre-vocational'},
+    {page:'Counselling', link:'/academics/counselling'}
+  ]
+
+- 
+  let b = [
+    {page:'Athletics', link:'/student-life/athletics'},
+    {page:'Clubs', link:'/student-life/clubs'}
+  ]
+
 input#click(type='checkbox', tabindex='0', aria-labelledby='prompt')
 
 header#navbar(class=(home ? 'navbar navbar--home' : 'navbar' ))
@@ -24,7 +37,15 @@ header#navbar(class=(home ? 'navbar navbar--home' : 'navbar' ))
     nav.navbar__menu
       ul.menu
         li.menu__item Academics
+          ul.submenu
+            each item, i in a
+              li.submenu__item
+                a.submenu__link(href=item.link)=item.page
         li.menu__item Student Life
+          ul.submenu
+            each item, i in b
+              li.submenu__item
+                a.submenu__link(href=item.link)=item.page
         each item, i in menu
           li.menu__item(class=(menu ? item.current : false ))
             a.menu__link(href= item.link)= item.page

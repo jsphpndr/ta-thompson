@@ -1,11 +1,30 @@
-.banner(data-bg=`${staging}/img/laughing-students.jpg`)
 
-  .banner__wrapper.content.content--wide.grid.grid--2cols--medium
+if home
 
-    .banner__content
+  header.banner.banner--home(data-bg=`${staging}/uploads/laughing-students.jpg`)
 
-      h1.banner__heading Cultivating Minds, Moulding Character
+    .banner__wrapper.content.content--wide.grid.grid--2cols--medium
 
-      p.banner__subheading Committed to the delivery of quality education and the promotion of academic excellence.
+      .banner__content
 
-      a(href='/our-school/') Learn more about our school
+        h1.banner__heading Cultivating Minds, Moulding Character
+
+        p.banner__subheading Committed to the delivery of quality education and the promotion of academic excellence.
+
+        a(href='/our-school/') Learn more about our school
+
+else if subpage
+
+  header.banner.banner--subpage(data-bg=`${staging}/uploads/laughing-students.jpg`)
+
+    .banner__wrapper.content.content--wide
+
+      .banner__content
+
+        h1.banner__heading=page
+
+else
+
+  .banner.banner--subpage--sub(data-bg=`${staging}/uploads/laughing-students.jpg`)
+
+    .banner__wrapper.content.content--wide.flex--middle(data-subpage=page)
