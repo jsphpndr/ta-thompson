@@ -1,6 +1,6 @@
 $spacing: 1rem !default
 
-.content
+.x
   margin:
     right: $spacing
     left: $spacing
@@ -11,6 +11,7 @@ $spacing: 1rem !default
       right: unquote('max(#{$spacing}, env(safe-area-inset-right))')
   
   &--wide
+    @extend .x
     max-width: $desktop
 
     @media(min-width: 1367px)
@@ -21,7 +22,7 @@ $spacing: 1rem !default
         right: auto
         left: auto
           
-    &--padded
+    &--p
       max-width: ($desktop + 40)
       margin:
         right: auto
@@ -29,9 +30,9 @@ $spacing: 1rem !default
       padding:
         right: $spacing
         left: $spacing
-        
+
       @media(min-width: 1367px)
-        max-width: ($desktop--wide + 40)
+        max-width: $desktop--wide + 40
 
       @supports ( padding: unquote( 'max(0px)' ) )
         padding:
@@ -42,17 +43,10 @@ $spacing: 1rem !default
   &--narrow
     max-width: $narrow
 
-    &--margin
-      @extend .content--narrow
+    &--xm
+      @extend .x--narrow
 
       @media (min-width: ($narrow + 41))
         margin:
           right: auto
           left: auto
-
-  &__heading
-    padding:
-      bottom: 1em
-    text-align: center
-
-    

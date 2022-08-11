@@ -1,106 +1,41 @@
-footer.footer
+footer(class='[ footer ] [ pt--5 pb--1 ]')
 
-  .footer__wrapper.content.content--wide.grid.grid--2cols--medium.grid--3cols--large
-    .col
-      h3 Academics
+  //- div(class='[ x--wide mb--1 ]')
+    
+  div(class='[ wrapper ] [ x--wide grid gr--1 gc--2 pb--3 ]')
 
-      - 
-        let footerAcademics = [
-          {page:'Departments', link: '/academics/departments'},
-          {page:'Pre-Vocational', link: '/academics/pre-vocational'},
-          {page:'Counselling', link:'/academics/counselling'},
-          //- {page:'', link: ''},
-        ]
-      nav
-        ul
-          each item, i in footerAcademics
-            li
-              a(href=item.link)=item.page
+    a(class='[ logo ] [ flex--middle ]' href='/' aria-label='Home')
+      include ../graphics/_logo
+  
+    //- p(class='[ summary ] [ ch--27 ]')
+    //-   | Committed to the delivery of quality education and the promotion of academic excellence.
 
-      - 
-        let footerLife = [
-          {page:'Athletics', link: '/student-life/atheltics'},
-          {page:'Clubs', link: '/student-life/clubs'},
-          //- {page:'', link: ''},
-        ]
-      
-      h3 Student Life
-      nav
-        ul
-          each item, i in footerLife
-            li
-              a(href=item.link)=item.page
-    .col
-      h3 Our School
-
-      - 
-        let footerSchool = [
-          {page:'About The School', link: '/our-school/'},
-          {page:'T.A. Thompson', link: '/our-school/thomas-alvin-thompson'},
-          {page:'Faculty & Staff', link:'/our-school/faculty-staff'},
-          //- {page:'', link: ''},
-        ]
-      nav
-        ul
-          each item, i in footerSchool
-            li
-              a(href=item.link)=item.page
-
-
-      h3
-        a(href='/news/') News
-      //- - 
-      //-   let life = [
-      //-     {page:'Athletics', link: '/student-life/atheltics'},
-      //-     {page:'Clubs', link: '/student-life/clubs'},
-      //-     //- {page:'', link: ''},
-      //-   ]
-      
-      //- h3 Student Life
-      //- nav
-      //-   ul
-      //-     each item, i in life
-      //-       li
-      //-         a(href=item.link)=item.page
-    .col
-      h3 Contact Us
-
+    div(class='[ address ] [ text--center ]')
       address
         span Gregory Street
         br
         span P.O. Box N-3913
         br
         span Nassau, NP
+
+    div(class='[ phone ] [ text--center ]')
+      +tel('242','325','1506')(class='[ block ]')
+      +tel('242','325','1507')(class='[ block ]')
     
-    
-      +tel('242','325','1506')
-      +tel('242','325','1507')
-
-      +email('info', 'tathompson.edu.bs')
-
-
-
-    ul.footer__social.social.flex--middle.no-list-style
-      li.social__item
-        a.social__link.flex--middle(href='#', aria-label='Follow me on LinkedIn' rel='noopener', target='_blank')
-          +in-sq('footer__linkedin', follow)
-
-      li.social__item
-        a.social__link.flex--middle(href='#', aria-label='Follow me on Facebook' rel='noopener', target='_blank')
-          +fb-sq('footer__facebook', follow)
+    div(class='[ follow ] [ text--center ]')
       
-      li.social__item
-        a.social__link.flex--middle(href='#', aria-label='Follow me on Twitter' rel='noopener', target='_blank')
-          +tw('footer__twitter', follow)
+      +email('info','tathompson.edu.bs')(class='[ in-bl mb--050 ]')
       
-      //- li.social__item
-      //-   a.social__link.flex--middle(href='#')
-  
-  b.line.content.content--wide
+      ul(class='[ social ] [ flex flex--center ]')
+        +fb-sq('')(class='[ mr--050 ]')
+        +ig('')(class='[ mr--050 ]')
 
-  .footer__copy.content.content--wide.flex--between--middle
+  b(class='[ line ] [ x--wide block ]')
 
-    small &copy; 2020 T.A. Thompson Junior High School. All rights reserved.
+  div(class='[ copyright ] [ x--wide flex--between py--1 ]')
+
+    small(class='[ mb--025 ]')= `© ${year} T.A. Thompson Junior High School.`
 
     small
       a(href='/privacy-policy') Privacy Policy
+    

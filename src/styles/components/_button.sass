@@ -1,79 +1,87 @@
 %btn
-  // font-weight: 300
   display: inline-block
-  border-radius: 3px
-  margin-bottom: 0.5em
-  margin-top: 0.5em
+  // font-family: Merriweather
+  font-weight: 700
   // text-transform: uppercase
+  border-radius: em(3)
+  margin-top: 0.5em
   white-space: nowrap
+  position: relative
+  overflow: hidden
+  +transition('color, background-color, border')
 
 .btn
   @extend %btn
 
-  &--primary
-    color: $white
-    background: $btn-primary
-
-  &--secondary
-    color: $btn-primary
-    background: $btn-secondary
-
-    &:hover
-      background: darken($btn-secondary, 5%)
-    
   &--solid
-    // box-shadow: $level2
-
+    
     &--sm
-      // @extend .btn--solid
-      padding: 0.5em 1.5em
+      padding: 0.15em 1em
 
     &--lg
-      // @extend .btn--solid
-      padding: 0.75em 2em
+      padding: 0.45em 2em
 
   &--ghost
-    background: transparent
-    border: 1px solid $btn-primary
-    color: $btn-primary
-
-    &:hover
-      color: $white
-      background: $btn-primary
+    color: $dark
+    background-color: $light
+    border: .1em solid
+    border-color: $light
 
     &--sm
       @extend .btn--ghost
-      font:
-        size: 1rem
-      padding: calc(0.35em - 1px) calc(1em - 1px)
+      padding: 0.15em 1em
 
     &--lg
       @extend .btn--ghost
-      padding: calc(0.75em - 1px) calc(2em - 1px)
-      // text-transform: uppercase
+      padding: 0.45em 2em
+    
+    @media (hover: hover)
+      color: $light
+      background-color: $light-init
+      +transition('color, background-color')
 
-  &--white
-    border-color: $white
+      &:hover
+        color: $dark
+        background-color: $light
+
+    &:active
+      color: $dark
+      background-color: $light
+
+  &--wht
+    background-color: $white
+    color: $black
+
+  &--blk
+    background-color: $black
     color: $white
-    background: rgba($white, 0)
 
-  &--dark
-    color: $btn-primary
-    border-color:  #d4d4d4
+  &--primary
+    color: $prime
+    background-color: $second
+    +transition('color, background-color')
+    
+    @media (hover: hover)
 
+      &:hover
+        background-color: darken($second, 2%)
 
-@media (hover: hover)
- 
- .btn
-  transition: background-color 0.3s cubic-bezier(.000, 0, .580, 1)
-  
-  // &--solid:hover
-  //  background-color: lighten($btn-primary, 5%)
-  //  box-shadow: $level1
-   
-  &--dark:hover
-   border-color: $btn-primary
+    &:active
+      color: $dark
+      background-color: $light
 
-  &--white:hover
-    background-color: rgba($white, 1)
-    color: $btn-primary
+// +ignore
+//   span.ripple
+//     position: absolute
+
+//     /* The absolute position we mentioned earlier
+//     border-radius: 50%
+//     transform: scale(0)
+//     animation: ripple 600ms linear
+//     background-color: $ripple
+
+//   @keyframes ripple
+//     to
+//       transform: scale(4)
+//       opacity: 0
+

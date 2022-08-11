@@ -1,0 +1,11 @@
+div(class='[ slider ]')
+      
+  div(class='[ slider__wrapper ]')
+  
+    ul(class='[ slider__track ]')
+
+      each item, image in images
+      
+        li(class='[ slide ]')
+          figure(class='[ slide__img ]')
+            +img(item.url, item.alt)

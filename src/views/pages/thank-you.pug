@@ -1,18 +1,17 @@
 extends ../layout/_layout
 
 block var
-  - var title = 'Thank You | [COMPANY NAME]'
-  - var description = 'This is a template.'
-  - var pageUrl = ''
+  - title = 'Thank You'
+  - description = 'This is a template.'
+  - pageUrl = ''
 
-
-  
+  - solid = true
 
 block content
 
-  main#main.main.content__main.content.content--wide.grid
+  main#main(class='[ main ] [ x--wide flex--middle pt--10 pb--5 ]')
 
-      article.article.content__proper.content--narrow
+      article
         h1 Thank You
 
         p Hey, thanks for getting in touch. I'll get back to you as soon as I can. 
@@ -25,10 +24,9 @@ block content
         small.script(aria-hidden='true') This page will redirect in 
           span#countdown
           | .
-      include ../partials/_sidebar
 
 block footer
-  +script('thank-you', false, false, true)
+  //- +script('thank-you', false, false, true)
 
   
 

@@ -1,0 +1,25 @@
+.section
+
+  +device(desktop-up)
+    grid-template-areas: 'img txt txt'
+    align-items: center
+
+    &__summary
+      // height: 100%
+      grid-area: txt
+      // display: flex
+      // flex-direction: column
+
+    &__thumb
+      grid-area: img
+
+  &__thumb
+    padding-top: percentage(220 / 200)
+    position: relative
+
+    > img
+      height: 100%
+      object-fit: cover
+      position: absolute
+      top: 0
+      left: 0

@@ -1,27 +1,72 @@
 .social
-      
+
   &__item
-    margin-left: 1em
+    +fluid('width', 16 * 1.5, 20)
+    // fill: #a9a9a9
+    fill: lighten($bodyColor, 15% )
+    // fill: $prime
+    +transition('fill')
+    // width: 1em
 
-    &:first-of-type
-      margin-left: 0
-  
-  &__link
-    display: inline-block
-    height: em(30)
-    width: em(30)
-    position: relative
+    &:hover, &:active
+      fill: $prime
+      // fill: lighten($prime, 10%)
+      // fill: #a9a9a9
 
-    &__title
+
+    &:last-of-type
+      margin-right: 0
+
+  &__icon
+    width: 1em
+    // height: 1em
+
+.copylink
+  background-color: rgba(#000, 0)
+  padding: 0
+  border: none
+  -webkit-appearance: none
+  cursor: pointer
+  position: relative
+
+  &::before, &::after
+    color: $second
+    background-color: $prime
+    position: absolute
+    visibility: hidden
+    opacity: 0
+    // +transition('visibility, opacity')
+    // transition: 1500ms ease-in-out
+    // transition-property: visibility, opacity
+    // will-change: visibility, opacity
+
+  &::after
+    content: ''
+    width: em(10)
+    height: em(10)
+    top: em(25)
+    left: 25%
+    transform: rotate(45deg)
+
+  &::before
+    content: 'Copied!'
+    font-size: 0.8em
+    padding: em(4) em(10)
+    border-radius: em(15)
+    top: em(35)
+    left: 50%
+    transform: translateX(-50%)
+
+  &.copied
+
+    &::before, &::after
       display: block
-      height: 0
-      left: 0
-      overflow: hidden
-      position: absolute
-      top: 0
-      width: 0
-      visibility: hidden
+      visibility: visible
+      opacity: 1
 
-    > svg
-      height: inherit
-      width: inherit
+  // &.blank
+    
+
+
+
+    

@@ -1,30 +1,38 @@
 
 if home
 
-  header.banner.banner--home(data-bg=`${staging}/uploads/laughing-students.jpg`)
+  header(class='[ hero hero--home ]' data-bg=`${site}/uploads/student-banner.jpg`)
 
-    .banner__wrapper.content.content--wide.grid.grid--2cols--medium
+    div(class='[ wrapper ] [ x--wide flex--middle ]')
 
-      .banner__content
+      div
 
-        h1.banner__heading Cultivating Minds, Moulding Character
+        h1(class='[ hidden ]') T.A. Thompson Junior High School
+        
+        h2(class='[ font--1 ]') Cultivating Minds, 
+          br 
+          span Moulding Character
 
-        p.banner__subheading Committed to the delivery of quality education and the promotion of academic excellence.
+        p(class='[ ch--44 h4 ]') Committed to the delivery of quality education and the promotion of academic excellence.
 
-        a(href='/our-school/') Learn more about our school
+        a(class='[ btn btn--solid--lg btn--primary ]' href='/our-school/') Learn More
+          span(class='[ hidden ]') About T.A. Thompson Junior High School
 
-else if subpage
 
-  header.banner.banner--subpage(data-bg=`${staging}/uploads/laughing-students.jpg`)
+      div(class='[ arrow ] [ flex--center ]')
+        include ../graphics/_down-arrow
 
-    .banner__wrapper.content.content--wide
-
-      .banner__content
-
-        h1.banner__heading=page
+else if map
+  div(class='[ hero ]')
 
 else
 
-  .banner.banner--subpage--sub(data-bg=`${staging}/uploads/laughing-students.jpg`)
+  header(class='[ hero ]' data-bg=`${site}/uploads/student-banner.jpg`)
 
-    .banner__wrapper.content.content--wide.flex--middle(data-subpage=page)
+    div(class='[ wrapper ] [ x--wide flex--middle ]')
+      
+      if subpage
+        span(class='[ subtitle block ]' data-section=subpage)
+
+      else
+        h1=title

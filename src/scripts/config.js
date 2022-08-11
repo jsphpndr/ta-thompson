@@ -1,19 +1,42 @@
 module.exports = [
   {
-    name: 'app',
-    deps: [
-      'inline/lazyload',
-      '~/lazysizes/plugins/rias/ls.rias.min',
-      '~/lazysizes/lazysizes.min'
-    ],
+    name: 'snippets',
+
     files: [
-      'components/background',
-      'components/nav',
+      'snippets/background',
+      'snippets/lazyload',
+      'snippets/nav',
+    ] 
+  },
+  {
+    name: 'reading-time',
+    
+    files: [
+      'components/readingtime'
     ]
   },
   {
-    name: 'obfuscate',
+    name: 'obscure',
     files: ['components/obscure']
+  },
+  {
+    name: 'lite-youtube',
+    files: ['third-party/lite-youtube']
+    // deps: [
+    //   '~/@justinribeiro/lite-youtube/lite-youtube.min',
+    // ]
+  },
+  {
+    name: 'map',
+    files: [ 'components/map' ]
+  },
+  {
+    name: 'lazysizes',
+    
+    deps: [
+      '~/lazysizes/plugins/rias/ls.rias.min',
+      '~/lazysizes/lazysizes.min'
+    ]
   },
   {
     name: 'thank-you',
@@ -21,10 +44,18 @@ module.exports = [
     files: ['components/thank-you']
   },
   {
+    name: 'app',
+
+    files: [
+      'components/navScroll',
+      'components/copyLink'
+    ]
+  },
+  {
     name: 'validate',
     
     files: [
-      'vendor/bouncer'
+      'third-party/bouncer'
     ]
   }
 ]

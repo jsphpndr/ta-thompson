@@ -1,0 +1,86 @@
+// $white: rgba(darken(white, 1%), 1)
+$white: rgb(247,247,247)
+$init-white: rgba($white, 0)
+
+// $black: #333333
+// $black: rgba(#111517, 1)
+// $black: rgb(0,1,5)
+// $black: rgb(34,34,34)
+$black: #0d1117
+// $black: #222B32
+$init-black: rgba($black, 0)
+// $bodyColor: rgba(#666, 1)
+// Primary Color
+// $prime: rgba(#0f47af, 1)
+$prime: rgba(#143256, 1)
+// #143256
+$init-prime: rgba($prime, 0)
+// Secondary Color
+$second: rgba(#ffbf00, 1)
+// Tertiary Color
+$terce: #5f6368
+$quart: #06c
+// $quart: #fd256e
+
+$body: lighten(#838795, 30%)
+
+$bodyColor: rgba(#474948,1)
+
+$tags: rgba(#D9D9D9, 1)
+// Buttons
+
+$level1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+$level2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+// Red
+$r: red
+
+// $themegrey: 
+
+\:root
+  
+  --light: #{$black}
+  --dark: #{$white}
+  
+  --grey: #{darken(#5f6368, 5%)}
+
+  --light-init: #{$init-white}
+  --dark-init: #{$init-black}
+
+  // --ripple: rgba(247,247,247, 0.7)
+
+  // ::selection
+  --select-clr: #{$white}
+  --select-bg: #{$black}
+
+  --code--bg: #{rgba(lighten(#5f6368, 40%), 0.5)}
+
+  // @media (prefers-color-scheme: dark)
+
+  //   --light: #{$white}
+  //   --dark: #{$black}
+
+  //   --grey: #{lighten(#838796, 20%)}
+
+  //   --light-init: #{$init-black}
+  //   --dark-init: #{$init-white}
+
+  //   // --ripple: rgba(0,1,5,0.7)
+
+  //   --code--bg:  rgba(240,246,252,0.15)
+
+
+
+$light: var(--light)
+$dark: var(--dark)
+
+$grey: var(--grey)
+
+$light-init: var(--light-init)
+$dark-init: var(--dark-init)
+
+$ripple: var(--ripple)
+
+$code: var(--code--bg)
+
+

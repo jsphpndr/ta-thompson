@@ -1,0 +1,46 @@
+extends ../../layout/_layout
+
+block var
+  - let title = 'Academics'
+  - let description = 'This is a template'
+  - let pageUrl = ''
+  - let academics = 'current'
+  //- - let subpage = 'Our School'
+  - let page = subpage
+  - crumbs = {'Academics':'last'}
+
+block content
+
+  div(class='[ flex--col ]')
+
+    div(class='[ layout--sidebar--left ] [ x--wide grid gr--2 gc--3 o--2 ]')
+
+      article(class='[ content ]')
+
+        h2 About T.A. Thompson Junior High 
+          span(class=[ hidden ]) School
+
+        - let p = 0;
+
+        while p++ < 4
+
+          p=lorem
+
+      include ../../partials/_sidebar
+      
+      +sidebar(schoolDepartments)
+
+    div(class='[ o--1 ]')
+
+      div(class='[ x--wide flex--between--middle flex--wrap pt--1 pb--2 ]')
+        
+        +breadcrumbs(crumbs)(class='[ mr--1 ]')
+
+        div(class='[ flex--middle ]')
+          
+          span(class='[ in-bl mr--1 ]') Share on:
+
+          ul(class='[ social ] [ flex ]')
+            +fb-sq('', true)(class='[ mr--050 ]')
+            +tw('', true)(class='[ mr--050 ]')
+            +in-sq('', true)(class='[ mr--050 ]')

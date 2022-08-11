@@ -1,17 +1,18 @@
 extends ../../layout/_layout
 
 block var
-  - let title = 'T.A. Thompson | T.A. Thompson Junior High School'
+  - let title = 'T.A. Thompson'
   - let description = 'This is a template'
   - let pageUrl = ''
   - let ta = 'current'
-  - let page = 'Our School'
+  - let subpage = 'Our School'
+  - crumbs = {'Our School':'/our-school/', 'T.A. Thompson':'last'}
 
 block content
 
-  include ../../partials/_banner
-  
-  .block.content.content--wide.grid
+  +breadcrumbs(crumbs)(class='[ x--wide pt--1 pb--2 ]')
+
+  div(class='[ layout--sidebar--left ] [ x--wide grid gr--2 gc--3 ]')
 
     article
 

@@ -1,44 +1,75 @@
 extends ../layout/_layout
 
 block var
-  - var title = 'Contact Us | T.A. Thompson Junior High School'
-  - var description = 'This is a template'
-  - var pageUrl = ''
-  - let contact = 'current'
-  - let main = 'flex--col flex--middle'
+  - title = 'Contact Us'
+  - description = 'This is a template'
+  - pageUrl = ''
+  - contact = 'current'
 
+  - crumbs = {'Contact Us':'last'}
+  - solid = true
 
 block content
 
-  .contact.content.content--wide
-    
-    h1 Contact Us
+  main#main(class='[ main ] [ flex--col pb--5 ]')
 
-    .contact__content.grid
+    article(class='[ x--wide o--3 ]')
 
-      .school-details
+      h1 Contact Us 
 
-        address
-          span Gregory Street
-          br
-          span P.O. Box N-3913
-          br
-          span Nassau, NP
-
-
-        script(data-local='info',data-domain='tathompson.edu.bs' , obfuscate)
-        script(data-country='1', data-area='242', data-prefix='325', data-line='1506' obfuscate)
-        script(data-country='1', data-area='242', data-prefix='325', data-line='1507' obfuscate)
-
-        ul.social.flex.no-list-style
-          li.social__icon
-            +fb-sq('sidebar__facebook', '#', false)
+      div(class='[ layout--sidebar--right ] [ grid gr--2 gc--3 ]')
+        
+        div(class='[ content ] [ o--2 ]')
           
-          li.social__icon
-            +tw('sidebar__twitter', '#', false)
+          p At T.A. Thompson Junior High School we care about our students and their parents. If you have questions for us, 
+            | don't hesitate to reach out by filling out the form below, send us an email or calling the school office.
+          
+          include ../components/_form__simple
 
-      include ../components/_form__simple
+        aside(class='[ sidebar ] [ o--1 ]')
 
-    
+          address(class='[ block mb--1 ]')
+            span Gregory Street
+            br
+            span P.O. Box N-3913
+            br
+            span Nassau, NP
+            br
+            +a('https://goo.gl/maps/NUqZKL5YayhroUf16', 'Get Directions')
 
-  #map.map
+          +email('info', 'tathompson.edu.bs')(class='[ block mb--050 ]')
+
+          +tel('242','325','1506')(class='[ block mb--050 ]')
+          
+          +tel('242','325','1507')(class='[ block mb--2 ]')
+
+          
+          ul(class='[ social ] [ flex--bottom ]')
+            +fb('#', false)(class='[ mr--050 ]')
+            +tw('#', false)
+
+
+    div(class='[ o--2 ]')
+
+      div(class='[ x--wide flex--between--middle flex--wrap pt--1 pb--2 ]')
+        
+        +breadcrumbs(crumbs)(class='[ mr--1 ]')
+
+        div(class='[ flex--middle ]')
+          
+          //- span(class='[ in-bl mr--1 ]') Share on:
+
+          ul(class='[ social ] [ flex--bottom ]')
+            +fb-sq('', true)(class='[ mr--075 ]')
+            +tw('', true)(class='[ mr--075 ]')
+            +in('', true, 'in-soc')(class='[ mr--075 ]')
+            +whatsapp('','','')(class='[ mr--075 ]')
+            +copylink(class='[ mr--075 ]')
+            //- +env('')
+
+
+    #map(class='[ hero map ] [ o--1 ]')
+
+block footer
+  +script('map', false, false, true)
+  script(async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCbQ15BZTZVtFkC1_IcVdMUXm4M0_kpVYo&callback=initMap')

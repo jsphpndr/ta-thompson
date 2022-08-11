@@ -1,0 +1,21 @@
+mixin breadcrumbs(crumbs)
+  if crumbs
+    nav(class='[ breadcrumb ]')&attributes(attributes)
+      
+      - crumbs
+
+      ul(class='[ flex ]')
+        
+        li(class='[ breadcrumb__item ] [ mr--1 ]')
+          a(class='[ breadcrumb__link ]' href='/') Home
+        
+        each val, key in crumbs
+          
+          if val === 'last'
+            
+            li(class='[ breadcrumb__item ]')=key
+          
+          else
+            
+            li(class='[ breadcrumb__item ] [ mr--1 ]')
+              a(class='[ breadcrumb__link ]' href=val)=key

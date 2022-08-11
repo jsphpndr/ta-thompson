@@ -5,50 +5,60 @@
 // @charset 'utf-8'
 // Configuration and helpers
 @import utils/var
-@import utils/functions
 @import utils/mixins
 
 // Fonts
 @import base/fonts
 
+@import base/_palette
+
 // Vendors
 @import vendor/reset
 
 // Base
+@import utils/_utils
 @import base/base
 @import base/_grid
 @import base/site-widths
 @import base/typography
 
 // Layout
-@import layout/header
+@import layout/navbar
 @import layout/layout
 @import layout/footer
 
 
 //Partials
-@import partials/banner
-@import partials/article-list
-// @import partials/sidebar
+@import partials/_hero
+@import partials/loop
+@import partials/sidebar
+@import partials/profiles
+@import partials/_sections
 
 // Components
 // @import components/featured
+@import components/slider
+@import components/carousel
 @import components/button
-@import components/_profile
-// @import components/breadcrumbs
-// @import components/quote
-// @import components/social
-// @import components/paginate
-@import components/_contact-form
-// @import components/contact-form
-
+@import components/breadcrumbs
+@import components/quote
+@import components/social
+@import components/paginate
+// @import components/_contact-form
+@import components/contact-form
+@import components/halfer
 
 // Pages
-// @import pages/article
-// @import pages/_home
 // @import pages/_post
-@import pages/contact
+@import pages/_product
+@import pages/_landing
+// @import pages/_home
+@import pages/_post
+
+.pixel
+  display: none
 
 /* uncss:ignore start */
-// @import vendor/prism
+@import vendor/prism
 /* uncss:ignore end */
+

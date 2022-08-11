@@ -1,5 +1,4 @@
 .form
-  // padding-top: 3em
 
   &__field
     margin-bottom: 0.5em
@@ -14,7 +13,9 @@
     margin-bottom: 0.5em
     padding: 0.5em 1em
     width: 100%
-    border: 1px solid silver
+    border: em(2) solid 
+    border-color: $light
+    border-radius: em(3)
 
   &__message
     height: 8rem
@@ -23,9 +24,6 @@
   &__disclaimer
     display: block
     margin-bottom: 1.5em
-
-    > a
-      border-bottom: 1px solid $black
 
 .required
   
@@ -40,16 +38,16 @@
   font-size: 0.8em
 /* uncss:ignore end */
 
-
 input[type=submit]
-  border: none
+  // border: none
   font: inherit
   cursor: pointer
 
 #checking
-  display: none
+  display: block
+  left: -9999em
   height: 0
-  overflow: hidden
-  visibility: hidden
+  position: absolute
   width: 0
+  z-index: -9999
 

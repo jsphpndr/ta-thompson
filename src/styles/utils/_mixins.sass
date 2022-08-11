@@ -161,23 +161,85 @@ $ratio: (1 + sqrt(5)) / 2
   @if $size == phone-only
     @media (max-width: 599px)
       @content
-  @else if $size == tablet-portrait-up
-    @media (min-width: 600px)
+  @else if $size == tablet-to-phone
+    @media (max-width: 800px)
       @content
   @else if $size == tablet-or-less
-    @media (max-width: 1024px), (max-width: 1365px) and (hover: none)
+    @media (max-width: 1024px), (max-width: 1366px) and (hover: none)
       @content
   @else if $size == desktop-up
-    @media (min-width: 1025px), (min-width: 1366px) and (hover: hover)
+    @media (min-width: 1025px) and (hover: hover), (min-width: 1367px) and (hover: none)
       @content
   @else if $size == big-desktop-up
     @media (min-width: 1800px)
       @content
 
-
-
 =ignore
   /* uncss:ignore start */
   @content
   /* uncss:ignore end */
+
+=transition($properties)
+  transition: 300ms ease-in-out
+  transition-property: unquote($properties)
+  will-change: unquote($properties)
+
+=gap($gap)
+  grid-gap: #{$gap}em
+  gap: #{$gap}em
+
+=hover($transition)
   
+  @media (hover: hover)
+    
+    @if $transition
+      +transition($transition)
+
+    &:hover
+      @content
+    
+  &:active
+   @content
+    
+=hbefore($transition)
+  
+  @media (hover: hover)
+    @if $transition
+      &::before
+        +transition($transition)
+
+    &:hover::before
+      @content
+    
+  &:active::before
+   @content
+
+=hafter($transition)
+  
+  @media (hover: hover)
+    
+    @if $transition
+      &::after
+        +transition($transition)
+
+    &:hover::after
+      @content
+    
+  &:active::before
+   @content
+
+  
+=container($query)
+  /* before
+  @container #{$query}
+    @content
+    /* styles applied when a container is at least 700px
+
+  /* after
+  @media --css-container and #{$query}
+    @content
+    /* styles applied when a container is at least 700px
+
+  @container #{$query}
+    @content
+    /* styles applied when a container is at least 700px

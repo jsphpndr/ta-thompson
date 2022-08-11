@@ -1,28 +1,48 @@
 mixin sidebar(data)
+  
+  aside(class='[ sidebar ]')
+    input#submenu(class='[ hidden ]' type='checkbox' aria-labelledby='dropdown')
+    nav(class='[ drop__menu ]')
 
-  aside.sidebar
+      ul(class='[ wrapper ]')
 
-    nav.sidebar__nav
-
-      ul.sidebar__menu
-
+        li(class='[ drop__toggle ] [ px--050 ]')
+          label(class='[ flex--between--middle py--050 ]' for='submenu') 
+            span#dropdown(class='[ drop__label ]') Menu
+          
+            b(class='[ drop__arrow ] [ flex--middle ]')
+              include ../graphics/_down-arrow
+          
         each item, i in data
-          li.sidebar__item(class=(data ? item.current : false ))
-            a.sidebar__link(href=item.link)=item.page
+          li(class=`[ drop__item ${data ? item.current : false}] [ py--050 ]`)
+            a(class='[ drop__link ]' href=item.link)=item.page
 
 -
   let schoolSubpages = [
     {page:'Our School', link:'/our-school', current: school},
     {page:'T.A. Thompson', link:'/our-school/thomas-alvin-thompson', current: ta},
     {page:'Faculty & Staff', link:'faculty-staff', current: faculty},
-    {page:'Events', link:'/our-school/events', current: events}
+    //- {page:'Events', link:'/our-school/events', current: events}
     //- {page:'', link:'', current:}
 
   ]
 
 -
   let schoolDepartments = [
-    {page:'Departments', link:'/academics/departments/'},
-    {page:'Pre-Vocational',link:'/academics/pre-vocational'},
-    {page:'Counselling',link:'/academics/counselling'}
+    //- {page:'Departments', link:'/academics/departments/'},
+    //- {page:'Pre-Vocational',link:'/academics/pre-vocational'},
+    //- {page:'Counselling',link:'/academics/counselling'}
+    {page:'Departments', link:'#'},
+    {page:'Pre-Vocational',link:'#'},
+    {page:'Counselling',link:'#'}
+  ]
+
+- 
+  let schoolLife = [
+    //- {page:'Athletics', link:'/student-life/athletics/'},
+    //- {page:'Clubs',link:'/student-life/clubs/'},
+    {page:'Athletics', link:'#'},
+    {page:'Clubs',link:'#'},
+
+    //- {page:'Counselling',link:'/academics/counselling'}
   ]

@@ -1,0 +1,28 @@
+
+- 
+  menu = [
+    {page:'Academics', link:'/academics', current:academics},
+    {page:'Student Life', link:'/student-life', current: student}, 
+    {page:'Our School', link:'/our-school', current: school},
+    {page:'News', link:'/news', current: news},
+    {page:'Contact Us', link:'/contact-us', current: contact}
+    ]
+
+header#navbar(class=(solid ? '[ navbar navbar--solid ]' : '[ navbar ]'))
+
+  div(class='[ wrapper ] [ x--wide--p flex--between--middle px--2 ]')
+
+    a(class='[ logo ] [ flex--middle ]' href='/' aria-label='Home')
+      include ../graphics/_logo
+
+    label#navicon(class='[ navicon ] [ flex--middle ]' for='click')
+      span#menu-prompt Open the menu
+      b(class='[ bar ]')
+
+    nav(class='[ navbar__menu ]')
+      ul(class='[ menu ]')
+        each item, i in menu
+          li(class='menu__item')
+            a(class=(item.current ? `[ menu__link ${item.current} ]` : '[ menu__link ]') href= item.link)= item.page
+
+  

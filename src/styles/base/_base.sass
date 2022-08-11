@@ -1,56 +1,70 @@
-html
-  box-sizing: border-box
-  text-rendering: optimizeLegibility
-  -webkit-font-smoothing: antialiased
-  
-  +interpolate(font-size, $min-viewport-width-in-px, $max-viewport-width-in-px, $min-font-size-in-px, $max-font-size-in-px)
-  // line-height: 1.618
-
-@supports(-webkit-overflow-scrolling: touch)
-  html
-    -webkit-overflow-scrolling: touch
-
-@supports(-webkit-tap-highlight-color: rgba(black, 0))
-  html
-    -webkit-tap-highlight-color: rgba(black, 0)
-
-@supports(text-size-adjust: 100%)
-  html
-    text-size-adjust: 100%
-
 *, *::before, *::after
-  box-sizing: inherit
+  box-sizing: border-box
+
+html
+  +interpolate(font-size, $min-viewport-width-in-px, $max-viewport-width-in-px, $min-font-size-in-px, $max-font-size-in-px)
+  -webkit-tap-highlight-color: rgba(black, 0)
+  // -webkit-overflow-scrolling: touch
+  text-size-adjust: 100%
+  scroll-behavior: smooth
 
 html, body
   overflow-x: hidden
-
-body
-  color: $black
-  overflow-x: hidden
-  font-family: $font
-  font-weight: 400
-  line-height: 1.5
-
-.triangle
-  height: 100%
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1612" viewBox="0 0 1440 1612" enable-background="new 0 0 1440 1612"><path d="M0-130h1440v1742L0 717" fill="rgb(15,71,175)"/></svg>') no-repeat
-  background-position-x: 50%
   
-a
-  text-decoration: none
+body
+  min-height: 100vh
+  color: $bodyColor
+  background-color: $dark
+  // background-color: rgb(0,1,5)
+  font:
+    family: system-ui, sans-serif
+    weight: 400
+  line-height: 1.5
+  text-rendering: optimizeSpeed
+  -webkit-font-smoothing: antialiased
 
-img
+
+::selection
+  color: $second
+  background-color: $prime
+    
+img, svg, iframe
   display: block
   width: 100%
   max-width: 100%
 
-input, textarea
-  font:
-    family: inherit
-    size: inherit
+img, svg
+  height: auto
+
+figure > img
+  color: $white
+  background-color: $black
+  // border-radius: em(5)
+
+// svg
+//   fill: $light
+
+a
   line-height: inherit
-  height: 2em
 
-.no-list-style
-  list-style: none
+%a:default
+  font:
+    weight: 700
+    weight: 500
+  color: $prime
+  border-bottom: em(2) solid $second
+  padding-bottom: em(2)
+  background-color: rgba($second, 0)
 
+
+a:not([class])
+  @extend %a:default
+
+  +hover('color, background-color')
+    color: $prime
+    background-color: $second
+
+  &:visited
+    @extend %a:default
+
+// https://pornzog.com/video/13365264/road-trip-27-to-bath-cynthia/

@@ -1,8 +1,58 @@
 .footer
-  color: $second
+  color: $white
   background-color: $prime
-  min-height: em(400)
-  padding-top: 5em
 
-  a
-    color: $second
+  > *
+    align-items: center
+  
+  a:not([class])
+    color: $white
+    border-bottom: em(2) solid $second
+    background-color: rgba($second, 0)
+    
+    +hover('color, background-color')
+      color: $prime
+      background-color: rgba($second, 1)
+
+  .logo
+    
+    +fluid('width', 250, 300)
+
+    > svg
+      fill: $white
+
+  .social
+
+    &__link
+      
+      > svg
+        fill: $white
+  
+  +device(desktop-up)
+
+    .wrapper
+      grid-template-columns: 27ch 1fr max-content 1fr max-content 1fr max-content
+      grid-template-areas: 'a . b . c . d'
+
+    .summary
+      grid-area: a
+
+    .address
+      grid-area: b
+
+    .phone
+      grid-area: c
+
+    .follow
+      grid-area: d
+
++device(phone-only)
+
+  .copyright
+    flex-direction: column
+
+.line
+  height: em(1)
+  background-color: $white
+
+

@@ -10,73 +10,74 @@ block var
 
 block content
 
-  .school-contacts
+  div(class='[ inspiration ] [ py--5 ]')
 
+    div(class='[ wrapper ] [ x--wide flex--col flex--middle ]')
 
-  include ../partials/_banner
+      q(class='[ ch--45 block font--2 text--center mb--1 ]') Education is the passport to the future, for tomorrow belongs to those who prepare for it today.
+
+      cite(class='[ block ]') Malcolm X
+
   //- Short summary of School | upcoming events
-  section.summary.content.content--wide
+  ul(class='[ x--wide grid x3--lg g--2 py--5 ]')
 
-    div
+    li
+      
+      h2(class='[ font--3 ]') Knowledge
+      
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi architecto odio et necessitatibus beatae repellendus.
 
-      h2 An Excellent School, Producing Excellent Students
+    li
+      
+      h2(class='[ font--3 ]') Integrity
 
-      p= lorem
-      p= lorem
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi architecto odio et necessitatibus beatae repellendus.
+
+    li
+      
+      h2(class='[ font--3 ]') Excellence
+      
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi architecto odio et necessitatibus beatae repellendus.
+
+    //- div
+
+    //-   h2(class='[ mb--050 ]') An Excellent School, Producing Excellent Students
+
+    //-   p= lorem
+    //-   p= lorem
 
   //- Prevocs
-  section.prevocs
+  section(class='[ feature ] [ half flex ]')
 
-    .content.content--wide
+    div(class='[ half__content ]')
+      
+      div(class='[ x--wide grid gc--3 ]')
+        
+        div(class='[ feature__content ] [ py--5 ]')
 
-      div
+          h2(class='[ mb--050 ]') Pre-Vocational Studies
 
-        h2 Pre-Vocational Studies
+          p= lorem
 
-        p= lorem
-        p= lorem
+          a(class='[ btn btn--solid--lg btn--primary ]' href='#') Learn More
+            span(class='[ hidden ]') About Pre-Vocational Studies
 
-      figure
+
+    div(class='[ half__img ] [ grid gc--3 o--2 ]')
+      figure(class='[ feature__img ]')
+        +img('laughing-students.jpg', 'Students laughing')
 
 
   //- News
 
-  section.news.content.content--wide.flex--col
+  section(class='[ x--wide ] [ pt--5 ]')
 
-    h2.news__heading Latest News
+    h2(class='[ mb--050 ]') Latest News
 
+    ul(class='[ loop ] [ grid x2--md x3--lg g--2 ]')
 
-    article.featured.grid
-
-      div.featured__content
-
-        h2.featured__heading An Awesome School Year
-
-        p.featured__paragraph= lorem
-
-        a(href='/news/post') Read This Article
-
-        p.featured__category Featured
-
-        time.featured__time Oct 31, 2020
-
-      figure.featured__img
-        +img('laughing-students', 'Students laughing')
-
-    ul.news__excerpts.no-list-style.grid.grid--2cols--medium.grid--3cols--large
-
-      - let i = 0;
+      - i = 0;
 
       while i++ < 3
 
-        li.news__excerpt
-          
-          a(href='/news/post')
-            article.excerpt.flex--col
-
-              h2.excerpt__heading T.A. Thompson Launches Website
-              time.excerpt__date Oct 31, 2020
-
-              figure.excerpt__img
-                +img('laughing-students', 'Students laughing')
-
+        include ../partials/_loop

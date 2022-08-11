@@ -1,31 +1,36 @@
 h1, h2, h3, h4, h5, h6
-  // font-family: $header-font
+  color: $prime
+  font-family: Merriweather
   font-weight: 700
-  // padding-top: 0.25em
-  padding-bottom: 0.25em
+  line-height: 1.25
+  padding-bottom: 0.15em
+  
+  a
+    color: inherit
+    font-weight: inherit
 
-h1
-  +fluid(font-size, 47, 52)
+h1,.font--1
+  +fluid(font-size, 32, 52)
 
-h2
+h2,.font--2
   +fluid(font-size, 37, 41)
 
-h3
+h3,.font--3
   +fluid(font-size, 29, 32)
 
-h4
+h4,.font--4
   +fluid(font-size, 23, 25)
 
-h5
+h5,.font--5
   +fluid(font-size, 18, 20)
 
-h6
+h6,.font--6
   +fluid(font-size, 14, 16)
 
 p
-  padding-top: 0.5em
-  padding-bottom: 0.5em
+  padding-bottom: 1em
   
 
 small
-  font-size: 0.8em
+  font-size: 0.7em
+  line-height: 1.5

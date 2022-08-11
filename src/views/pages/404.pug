@@ -1,26 +1,20 @@
 extends ../layout/_layout
 
 block var
-  - var title = 'Error 404 | T.A. Thompson Junior High School'
-  - var description = 'This is a template.'
-  - var pageUrl = ''
+  - title = 'Error 404'
+  - description = 'This is a template.'
+  - pageUrl = ''
 
-
-  
+  - solid = true
 
 block content
 
-  main#main.main
-
-    .content__main.content.content--wide.grid
-
-      .content__proper.proper.content--narrow.flex--col
+  main#main(class='[ main ] [ x--wide flex--middle pt--10 pb--5 ]')
         
-        article.article
-          h1 Error 404
+    article
 
-          p 
-            | I guess you're lost... 
-            a(href='/') Need some help getting back?
+        h1 Error 404
 
-      include ../partials/_sidebar
+        p 
+          | It looks like you might be lost... 
+          a(href='/') Need some help getting back?

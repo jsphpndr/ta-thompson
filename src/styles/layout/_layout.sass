@@ -1,77 +1,91 @@
+.container
+  height: 100vh
+  overflow-y: scroll
+  
+.content--wrapper
+  background-color: $white
+  position: relative
+
 .main
-  min-height: 100vh
-  padding-bottom: 5rem
+  min-height: calc(100vh - #{($header-height + 187px)})
 
-.block
-  grid-template-columns: em(250) 1fr
-  grid-template-areas: 'sidebar article'
-  padding-top: 5rem
-  grid-gap: 2rem
+  // +device(tablet-or-less)
+    // padding-top: em(60)
 
-  article
-    grid-area: article
+// .container
+//   max-width: em(2500)
+//   margin-right: auto
+//   margin-left: auto
 
-  h1
-    color: $prime
-    line-height: 1
+
+/* before
+.query--container
+  contain: layout inline-size style
+  --css-contain: layout inline-size style
+  contain: layout inline-size style
+
+/* after
+
+.spotlight
+
+  &__img
+    padding-top: 100%
     position: relative
 
-    &::before
-      content: ''
-      background-color: $second
-      height: em(1)
-      width: 100%
+    > img
+      height: 100%
+      object-fit: cover
       position: absolute
-      bottom: em(6)
+      top: 0
       left: 0
+    
+    @media (max-width: 900px)
+      display: none
+
+.select
+
+  &__link
+    color: $black
+    padding:
+      right: 1em
+      left: 1em
+
+    &:hover
+      color: $white
+      background-color: $black
+      border-radius: em(20)
+      
+
+.selected
+  color: $white
+  background-color: $black
+  border-radius: em(20)
+
+
+.layout
+
+  &--sidebar
+
+    &--left
+      +device(desktop-up)
+        grid-template-columns: minmax(em(280), em(300)) 1fr
+        grid-template-areas: 'a b'
+
+    &--right
+      +device(desktop-up)
+        grid-template-columns: 1fr minmax(em(280), em(300))
+        grid-template-areas: 'b a'
+
 
 
 .sidebar
-  color: $second
-  background-color: $prime
-  grid-area: sidebar
-  padding: 1rem
-
-  a
-    color: $second
-
-.hidden
-
-  &__heading
-    font-size: 1px
-    height: 0
-    width: 0
-    visibility: 
-    position: absolute
-    top: 0
-    left: -999rem
-    z-index: -999
-
-.news
-
-  &__heading
-    order: 2
-
-  &__excerpts
-    order: 3
-
-.featured
   order: 1
 
+  +device(desktop-up)
+    grid-area: a
 
+.content
+  order: 2
 
-// Subpages
-
-.banner
-
-  &--subpage
-
-    &::before
-      content: attr(data-subpage)
-      +fluid(font-size, 47, 52)
-      font-weight: 700
-      
-
-
-
-    
+  +device(desktop-up)
+    grid-area: b

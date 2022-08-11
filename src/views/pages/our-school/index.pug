@@ -1,31 +1,34 @@
 extends ../../layout/_layout
 
 block var
-  - let title = 'Our School | T.A. Thompson Junior High School'
+  - let title = 'Our School'
   - let description = 'This is a template'
   - let pageUrl = ''
   - let school = 'current'
-  - let subpage = 'Our School'
-  - let page = subpage
+  - crumbs = {'Our School':'last'}
 
 block content
 
-  include ../../partials/_banner
+  
+  div(class='[ x--wide flex--col ]')
+  
+    div(class='[ layout--sidebar--left ] [ grid gr--2 gc--3 o--2 ]')
 
-  .block.content.content--wide.grid
+      article(class='[ content ]')
 
-    article
+        h2 About T.A. Thompson Junior High 
+          span(class=[ hidden ]) School
 
-      h2 About the School
+        - let p = 0;
 
-      - let p = 0;
+        while p++ < 4
 
-      while p++ < 4
+          p=lorem
 
-        p=lorem
+      include ../../partials/_sidebar
+      
+      +sidebar(schoolSubpages)
 
-    include ../../partials/_sidebar
-    +sidebar(schoolSubpages)
+    +breadcrumbs(crumbs)(class='[ pt--1 pb--2 o--1 ]')
 
-
-    
+      

@@ -1,0 +1,193 @@
+// Display
+
+.block
+  display: block
+
+.inline
+  display: inline
+
+.in-bl
+  display: inline-block
+
+// Font Case
+
+.lower
+  text-transform: lowercase
+
+.upper
+  text-transform: uppercase
+
+// Font Weight
+
+.light
+  font-weight: lighter
+  
+.reg
+  font-weight: normal
+
+.bold
+  font-weight: bold
+
+// Text Decoration
+
+.strike
+  text-decoration: line-through
+
+// Positioning
+
+.sticky
+  position: sticky
+  top: 2em
+
+.fixed
+  position: fixed
+
+// Margins
+
+.x--auto
+  margin-left: auto
+  margin-right: auto
+
+@for $h from 25 through 54
+
+  .ch--#{$h}
+    max-width: #{$h}ch
+
+@for $i from 1 through 100
+
+  $units: (0#{$i}: #{$i / 100}em, $i: #{$i}em, d#{$i}: #{$i / 10}em)
+
+  @each $class, $unit in $units
+
+    // Padding
+    .p
+      &--#{$class}
+        padding: $unit
+    
+    .pt
+      &--#{$class}
+        padding-top: $unit
+
+    .pr
+      &--#{$class}
+        padding-right: $unit
+
+    .pb
+      &--#{$class}
+        padding-bottom: $unit
+
+    .pl
+      &--#{$class}
+        padding-left: $unit
+
+    .px
+      &--#{$class}
+        padding-right: $unit
+        padding-left: $unit
+    
+    .py
+      &--#{$class}
+        padding-top: $unit
+        padding-bottom: $unit
+
+    // Margin
+
+    .m
+      &--#{$class}
+        margin: $unit
+    
+    .mt
+      &--#{$class}
+        margin-top: $unit
+
+    .mr
+      &--#{$class}
+        margin-right: $unit
+
+    .mb
+      &--#{$class}
+        margin-bottom: $unit
+
+    .ml
+      &--#{$class}
+        margin-left: $unit
+
+    .mx
+      &--#{$class}
+        margin-right: $unit
+        margin-left: $unit
+    
+    .my
+      &--#{$class}
+        margin-top: $unit
+        margin-bottom: $unit
+  
+
+@for $o from 1 through 10
+  .o--#{$o}
+    order: $o
+
+@for $i from 1 through 100
+
+  $units: (0#{$i}: #{$i / 100}em, $i: #{$i}em, d#{$i}: #{$i / 10}em)
+
+  @each $gap, $unit in $units
+    .g--#{$gap}
+      gap: $unit
+
+    .gc--#{$gap}
+      column-gap: $unit
+    
+    .gr--#{$gap}
+      row-gap: $unit
+
+.px--full
+  +fluid(('padding-right','padding-left'), 16, 40)
+
+.text
+
+  &--left
+    text-align: left
+
+  &--center
+    text-align: center
+
+  &--right
+    text-align: right
+
+.hidden
+  width: 0
+  height: 0
+  overflow: hidden
+  visibility: hidden
+  position: absolute
+  top: 0
+  left: -999rem
+  z-index: -999
+
+.video
+  min-width: 100%
+  max-width: 100%
+  min-height: 100%
+  max-height: 100%
+  background-color: $black
+  object-fit: cover
+
+.line
+  height: em(1)
+
+  &--white
+    background-color: #979797
+
+.bg
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+
+@for $o from 1 through 10
+  .o--#{$o}
+    order: $o
+
+.wsnw
+  white-space: nowrap

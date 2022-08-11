@@ -1,53 +1,42 @@
 extends ../../layout/_layout
 
 block var
-  - let title = 'T.A. Thompson Junior High School'
+  - let title = 'News'
   - let description = 'This is a template'
   - let pageUrl = ''
   - let news = 'current'
 
+  - crumbs = {'News':'last'}
+
 
 block content
 
-  .news.content.content--wide.flex--col
+  div(class='[ flex--col ]')
 
-    h1.hidden__heading News
+    div(class='[ o--2 ]')
 
-    h2.news__heading Latest News
+      ul(class='[ loop ] [ x--wide grid x2--md x3--lg g--2 ]')
 
-    //- p Keep up with the latest happenings at T.A. Thompson. We have a busy school year and an active student body. Go, Scorpions!
+        - i = 0;
 
-    article.featured.grid
+        while i++ < 9
 
-      div.featured__content
+          include ../../partials/_loop
 
-        h2.featured__heading An Awesome School Year
+      include ../../components/_paginate
 
-        p.featured__paragraph= lorem
+    div(class='[ o--1 ]')
 
-        a(href='/news/post') Read This Article
+      div(class='[ x--wide flex--between--middle flex--wrap pt--1 pb--2 ]')
+        
+        +breadcrumbs(crumbs)(class='[ mr--1 ]')
 
-        p.featured__category Featured
-
-        time.featured__time Oct 31, 2020
-
-      figure.featured__img
-        +img('laughing-students', 'Students laughing')
-
-    ul.news__excerpts.no-list-style.grid.grid--2cols--medium.grid--3cols--large
-
-      - let i = 0;
-
-      while i++ < 9
-
-        li.news__excerpt
+        div(class='[ flex--middle ]')
           
-          a(href='/news/post')
-            article.excerpt.flex--col
+          span(class='[ in-bl mr--1 ]') Share on:
 
-              h2.excerpt__heading T.A. Thompson Launches Website
-              time.excerpt__date Oct 31, 2020
-
-              figure.excerpt__img
-                +img('laughing-students', 'Students laughing')
+          ul(class='[ social ] [ flex ]')
+            +fb-sq('', true)(class='[ mr--050 ]')
+            +tw('', true)(class='[ mr--050 ]')
+            +in-sq('', true)(class='[ mr--050 ]')
 

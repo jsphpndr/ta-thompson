@@ -1,7 +1,11 @@
-doctype html
-
-include ../utils/_var
+include ../_var
 include ../utils/_mixins
+include ../utils/_obscure
+include ../utils/_icons
+include ../components/_breadcrumbs
+
+
+doctype html
 
 block var
 
@@ -11,67 +15,101 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
   
     meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
     
-    // Site Title
-    title= title
-
-    // Site Description
+    //- Site Title
+    title= home ? `${siteName} | ${tagLine}` : `${title} | ${siteName}`
+    //- title= title
+    //- Site Description
     meta(name='description' content= description)
-
-    // Responsive Tag
+    //- Responsive Tag
     meta(name='viewport', content='width=device-width, initial-scale=1.0, viewport-fit=cover')
 
-    // Google hreflang Tag
+    //- Google hreflang Tag
     link(rel='canonical', href= site + pageUrl)
   
+    //- Preconnect
+    link(rel='preconnect', href='https://res.cloudinary.com/filiio/')
+    //- link(rel='preconnect', href='https://connect.facebook.net')
     
-    //- // Preconnect
-    //- link(rel='preconnect', href='')
-    
+    //- link(rel='preload', href='https://static.josephpinder.com/fonts/metropolis-regular.woff2', as='font', type='font/woff2', crossorigin='')
+    //- link(rel='preload', href='https://static.josephpinder.com/fonts/metropolis-medium.woff2', as='font', type='font/woff2', crossorigin='')
+    //- link(rel='preload', href='https://static.josephpinder.com/fonts/metropolis-bold.woff2', as='font', type='font/woff2', crossorigin='')
   
-    // CSS Loading
-    - let hash = new Date().getTime()
-
     //- https://www.filamentgroup.com/lab/critical-cdn.html
-    // CSS — START
-    if pro    
-      link(rel='preload' href='/styles/style-version.min.css' as='style')
-      link(type='text/css' rel='stylesheet' href='/styles/style-version.min.css')
-
+    //- CSS — START
+    if pro
+      link(rel='preload', href='/styles/style-version.min.css', as='style')
+      link(rel='stylesheet', href='/styles/style-version.min.css', type='text/css')
     else
-      link(rel='preload' href='/styles/style.css' as='style')
-      link(rel='stylesheet', href='/styles/style.css', )
-    // CSS — END
+      link(rel='preload', href='/styles/style.css', as='style')
+      //- link(rel='preload', href="/scripts/snippets.build.js", as='script')
+      link(rel='stylesheet', href='/styles/style.css', type='text/css')
+    //- CSS — END
     
-    // Site Scripts — START
-    +script('app', true, true, false)
-    // Site Scripts — END
+    //- Site Scripts — START
+    +script('snippets', false, 'defer' )
+    //- script
+    
 
-    // No Script Styles – START
+    //- Site Scripts — END
+
+    //- No Script Styles – START
     noscript
       style.
         .script {display: none}
-    // No Script Styles – START
+    //- No Script Styles – START
 
-    // Site Favicons - START
-    //- https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browsers-836a6aace3df
+    //- Site Favicons - START
     link(rel='icon' href='/favicon.svg')
-    link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#9395a1")
-    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
-    link(rel="manifest", href="/manifest.json")
-    meta(name="theme-color", content="#ffffff")
-    // Site Favicons - END
+    link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#9395A1')
+    link(rel='apple-touch-icon' href='/apple-touch-icon.png')
+    link(rel='manifest' href='/manifest.json')
+    meta(name='theme-color' content='#ffffff')
+    //- Site Favicons - END
       
-  body(class=(body ? body : false ))
+  body
     
-    //-  Include Site Header
-    include _header
-    
-    main#main.main(class=(main ? main : false ))
-      block content
-    
-    //- Include Site Footer
-    include _footer
-    +script('obfuscate', false, false, true)
+    input#click(type='checkbox' aria-labelledby='menu-prompt')
 
+    #container(class='[ container ]')
+      //-  Include Site Header
+      include _navbar
+      
+      #wrapper(class='[ content--wrapper ]')
+
+          
+        if nohero
+          
+          main#main(class='[ main ] [ x--wide pt--7 pb--5 ]')
+
+            block content
+
+        else if contact
+          
+          main#main(class='[ main ] [ pb--5 ]')
+
+            block content
+
+        else
+          
+          main#main(class='[ main ] [ pb--5 ]')
+            
+            include ../partials/_banner
+
+            block content
+        
+        //- Include Site Footer
+        include _footer
+          
+        //- include ../partials/_sidebar
+
+      //- +breadcrumbs(crumbs)(class='[ pb--1 ]')
+    +script('app', false, 'defer')
+    +script('lazysizes', true, 'defer')
+    +script('obscure', false )
+    
+    //- script !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','246740276522258');fbq('track','PageView')
+    //- noscript
+    //-   img(height='1', width='1', style='display:none', src='https://www.facebook.com/tr?id=XXXXXXXXXX&ev=PageView&noscript=1')
+    
     block footer
       
