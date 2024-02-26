@@ -1,0 +1,1 @@
+!function(){var e,t=document.getElementById("readingTime"),n=document.getElementById("text").innerText.trim().split(/\s+/).length,i=Math.ceil(n/200);(e=document.createElement("span")).classList.add("readingTime"),e.innerText=" — ".concat(i," min read."),t.parentNode.insertBefore(e,t),t.remove()}();
