@@ -46,6 +46,7 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     //- CSS — END
     
     //- Site Scripts — START
+    <script>var cloudinary = "filiio"; const lat = 25.061238955732463; const lng = -77.36150745674503;</script>
     +script('snippets', false, 'defer' )
     //- script
     
@@ -105,6 +106,8 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
       //- +breadcrumbs(crumbs)(class='[ pb--1 ]')
     +script('app', false, 'defer')
     +script('lazysizes', true, 'defer')
+    //- +script('lite-youtube', false)
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"></script>
     +script('obscure', false )
     
     //- script !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','246740276522258');fbq('track','PageView')

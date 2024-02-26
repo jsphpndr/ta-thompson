@@ -1,8 +1,8 @@
 let map;
 
 function initMap(){
-  let lat = 25.061238955732463
-  let lng = -77.36150745674503
+  // let lat = 25.061238955732463
+  // let lng = -77.36150745674503
   //Map Options
   let options = {
     zoom: 17,

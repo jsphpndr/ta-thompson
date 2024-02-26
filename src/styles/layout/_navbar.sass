@@ -47,16 +47,18 @@
       z-index: -1
       +transition('left')
 
-  &--scrolled
-    position: fixed
-    +fluid('top', -60, -100)
-    background-color: $prime
-    box-shadow: 0 5px 5px rgba($black, 0.3)
-    backdrop-filter: saturate(180%) blur(8px)
-
   &--solid
     background-color: $prime
 
++ignore
+  .navbar
+    &--scrolled
+      position: fixed
+      +fluid('top', -60, -100)
+      background-color: $prime
+      box-shadow: 0 5px 5px rgba($black, 0.3)
+      backdrop-filter: saturate(180%) blur(8px)
+      
 .menu
   display: flex
 
@@ -69,7 +71,7 @@
     
   &__item
     margin-left: 30px
-    overflow-x: hidden
+    overflow: hidden
 
     +device(tablet-or-less)
       padding-top: 1em

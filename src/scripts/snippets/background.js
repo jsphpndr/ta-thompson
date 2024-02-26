@@ -1,5 +1,5 @@
 (() => {
-  const baseUrl = 'https://res.cloudinary.com/filiio/image/fetch';
+  const baseUrl = `https://res.cloudinary.com/${cloudinary}/image/fetch`;
 
 Array.from(document.querySelectorAll('[data-bg]')).forEach(image => {
     const { clientWidth, clientHeight } = image;
